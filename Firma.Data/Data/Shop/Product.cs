@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Linq;
 
-namespace Firma.Intranet.Models.Shop
+namespace Firma.Data.Data.Shop
 {
     public class Product
     {

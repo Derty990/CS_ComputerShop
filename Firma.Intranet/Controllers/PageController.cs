@@ -5,16 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Firma.Intranet.Data;
-using Firma.Intranet.Models.CMS;
+using Firma.Data.Data.CMS;
+using Firma.Data.Data;
 
 namespace Firma.Intranet.Controllers
 {
     public class PageController : Controller
     {
-        private readonly FirmaIntranetContext _context;
+        private readonly FirmaContext _context;
 
-        public PageController(FirmaIntranetContext context)
+        public PageController(FirmaContext context)
         {
             _context = context;
         }

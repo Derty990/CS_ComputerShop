@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Firma.Intranet.Models.Customers
+namespace Firma.Data.Data.Customers
 {
     public class Order
     {

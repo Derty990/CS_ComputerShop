@@ -262,3 +262,5 @@ D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputer
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Intranet\obj\Debug\net8.0\Firma.Intranet.pdb
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Intranet\obj\Debug\net8.0\Firma.Intranet.genruntimeconfig.cache
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Intranet\obj\Debug\net8.0\ref\Firma.Intranet.dll
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Intranet\bin\Debug\net8.0\Firma.Data.dll
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Intranet\bin\Debug\net8.0\Firma.Data.pdb

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 
-namespace Firma.Intranet.Models.CMS
+namespace Firma.Data.Data.CMS
 {
     public class Topicality
     {

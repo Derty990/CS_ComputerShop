@@ -1,12 +1,13 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿
 
 #nullable disable
 
-namespace Firma.Intranet.Migrations
+using Microsoft.EntityFrameworkCore.Migrations;
+
+namespace Firma.Data.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialCreate : Migration
+    public partial class M1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

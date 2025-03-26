@@ -1,8 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
-using Firma.Intranet.Models.Shop;
-using Firma.Intranet.Models.Customers;
+using Firma.Data.Data.Shop;
+using Firma.Data.Data.Customers;
 
-namespace Firma.Intranet.Models.Customers
+namespace Firma.Data.Data.Customers
 {
     public class User
     {
@@ -27,10 +27,10 @@ namespace Firma.Intranet.Models.Customers
         [Phone(ErrorMessage = "Wrong phone number format, area code is required")]
         public required string Phone { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Registration date is required")]
         public DateTime RegistrationDate { get; set; } = DateTime.UtcNow;
 
-        [Required]
+        [Required(ErrorMessage = "User role is required")]
         public UserRole Role { get; set; } = UserRole.User;
 
         public ICollection<Order> Orders { get; set; } = new List<Order>();

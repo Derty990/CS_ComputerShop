@@ -5,17 +5,17 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Firma.Intranet.Data;
-using Firma.Intranet.Models.Customers;
-using Firma.Intranet.Models.Shop;
+using Firma.Data.Data.Customers;
+using Firma.Data.Data.Shop;
+using Firma.Data.Data;
 
 namespace Firma.Intranet.Controllers
 {
     public class OrderItemController : Controller
     {
-        private readonly FirmaIntranetContext _context;
+        private readonly FirmaContext _context;
 
-        public OrderItemController(FirmaIntranetContext context)
+        public OrderItemController(FirmaContext context)
         {
             _context = context;
         }

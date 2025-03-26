@@ -1,22 +1,22 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using Firma.Intranet.Models.Customers;
+using Firma.Data.Data.Customers;
 
 
-namespace Firma.Intranet.Models.Shop
+namespace Firma.Data.Data.Shop
 {
     public class Cart
     {
         [Key]
         public int IdCart { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "IdUser is required")]
         public int IdUser { get; set; }
 
         [ForeignKey("IdUser")]
         public required User User { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "IdProduct is required")]
         public int IdProduct { get; set; }
 
         [ForeignKey("IdProduct")]

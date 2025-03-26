@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Firma.Intranet.Models.Shop
+namespace Firma.Data.Data.Shop
 {
     public class ProductType
     {

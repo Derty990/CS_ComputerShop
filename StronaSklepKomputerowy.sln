@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35825.156 d17.13
+VisualStudioVersion = 17.13.35825.156
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firma.PortalWWW", "Firma.PortalWWW\Firma.PortalWWW.csproj", "{9C27120F-3460-4395-9A24-6A5833BB74F3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firma.Intranet", "Firma.Intranet\Firma.Intranet.csproj", "{6D764F2D-FF8A-4E84-9BFB-6421CD094B76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Firma.Data", "Firma.Data\Firma.Data.csproj", "{E030E4B1-E440-4379-A6D0-EB22A781D037}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{6D764F2D-FF8A-4E84-9BFB-6421CD094B76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D764F2D-FF8A-4E84-9BFB-6421CD094B76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D764F2D-FF8A-4E84-9BFB-6421CD094B76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E030E4B1-E440-4379-A6D0-EB22A781D037}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E030E4B1-E440-4379-A6D0-EB22A781D037}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E030E4B1-E440-4379-A6D0-EB22A781D037}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E030E4B1-E440-4379-A6D0-EB22A781D037}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
