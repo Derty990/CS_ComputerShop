@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TRjYfEOyMfqlgjDyhlBfqLYjN+r15KKstd8LLkN7do8=",
+  "Hash": "/V1dnHxcBauOP4Jp0knrHS+ct1WJWnYwkzPynmFtztE=",
   "Source": "Firma.Intranet",
   "BasePath": "_content/Firma.Intranet",
   "Mode": "Default",
@@ -57,6 +57,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.Intranet\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Firma.Intranet.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.Intranet\\wwwroot\\css\\intranet.css",
+      "SourceId": "Firma.Intranet",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.Intranet\\wwwroot\\",
+      "BasePath": "_content/Firma.Intranet",
+      "RelativePath": "css/intranet#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "lxoitkylbb",
+      "Integrity": "ubuLPqOC7NM6d91toT6aD8F7QA9Z+P2Qe2YOnCagoyQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\intranet.css"
     },
     {
       "Identity": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.Intranet\\wwwroot\\css\\site.css",
@@ -1320,6 +1341,88 @@
     }
   ],
   "Endpoints": [
+    {
+      "Route": "css/intranet.css",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.Intranet\\wwwroot\\css\\intranet.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2315"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ubuLPqOC7NM6d91toT6aD8F7QA9Z+P2Qe2YOnCagoyQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 02:54:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ubuLPqOC7NM6d91toT6aD8F7QA9Z+P2Qe2YOnCagoyQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/intranet.lxoitkylbb.css",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.Intranet\\wwwroot\\css\\intranet.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2315"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ubuLPqOC7NM6d91toT6aD8F7QA9Z+P2Qe2YOnCagoyQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 02:54:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lxoitkylbb"
+        },
+        {
+          "Name": "label",
+          "Value": "css/intranet.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ubuLPqOC7NM6d91toT6aD8F7QA9Z+P2Qe2YOnCagoyQ="
+        }
+      ]
+    },
     {
       "Route": "css/site.c2tiyv64ts.css",
       "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.Intranet\\wwwroot\\css\\site.css",

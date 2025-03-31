@@ -85,6 +85,88 @@
       ]
     },
     {
+      "Route": "css/intranet.css",
+      "AssetFile": "css/intranet.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2315"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ubuLPqOC7NM6d91toT6aD8F7QA9Z+P2Qe2YOnCagoyQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 02:54:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ubuLPqOC7NM6d91toT6aD8F7QA9Z+P2Qe2YOnCagoyQ="
+        }
+      ]
+    },
+    {
+      "Route": "css/intranet.lxoitkylbb.css",
+      "AssetFile": "css/intranet.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2315"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ubuLPqOC7NM6d91toT6aD8F7QA9Z+P2Qe2YOnCagoyQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 02:54:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "lxoitkylbb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ubuLPqOC7NM6d91toT6aD8F7QA9Z+P2Qe2YOnCagoyQ="
+        },
+        {
+          "Name": "label",
+          "Value": "css/intranet.css"
+        }
+      ]
+    },
+    {
       "Route": "css/site.c2tiyv64ts.css",
       "AssetFile": "css/site.css",
       "Selectors": [],

@@ -1,8 +1,223 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Panel Główny";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="row mb-4">
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card border-left-primary h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Zamówienia (Miesięcznie)
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">215</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-calendar-check h1 text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card border-left-success h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            Przychód (Roczny)
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">1,245,000 zł</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-currency-dollar h1 text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card border-left-info h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                            Produkty
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">352</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-box-seam h1 text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card border-left-warning h-100 py-2">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            Aktywni użytkownicy
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">837</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="bi bi-people h1 text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h6 class="m-0 font-weight-bold text-primary">Przegląd zamówień</h6>
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                        Filtruj
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">Dzisiaj</a>
+                        <a class="dropdown-item" href="#">Tydzień</a>
+                        <a class="dropdown-item" href="#">Miesiąc</a>
+                        <a class="dropdown-item" href="#">Rok</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Data</th>
+                                <th>Klient</th>
+                                <th>Status</th>
+                                <th>Wartość</th>
+                                <th>Akcje</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 1; i <= 5; i++)
+                            {
+                                <tr>
+                                    <td>#@(1000 + i)</td>
+                                    <td>@DateTime.Now.AddDays(-i).ToString("dd.MM.yyyy")</td>
+                                    <td>Klient @i</td>
+                                    <td>
+                                        @{
+                                            string status = i switch
+                                            {
+                                                1 => "Nowe",
+                                                2 => "W realizacji",
+                                                3 => "Wysłane",
+                                                4 => "Dostarczone",
+                                                _ => "Zakończone"
+                                            };
+                                            string statusClass = i switch
+                                            {
+                                                1 => "primary",
+                                                2 => "info",
+                                                3 => "warning",
+                                                4 => "success",
+                                                _ => "secondary"
+                                            };
+                                        }
+                                        <span class="badge bg-@statusClass">@status</span>
+                                    </td>
+                                    <td>@(i * 500 + 250) zł</td>
+                                    <td>
+                                        <div class="btn-group btn-group-sm">
+                                            <a href="#" class="btn btn-info"><i class="bi bi-eye"></i></a>
+                                            <a href="#" class="btn btn-primary"><i class="bi bi-pencil"></i></a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h6 class="m-0 font-weight-bold text-primary">Najnowsze aktualności</h6>
+            </div>
+            <div class="card-body">
+                <div class="list-group list-group-flush">
+                    @for (int i = 1; i <= 4; i++)
+                    {
+                        <a href="#" class="list-group-item list-group-item-action">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h6 class="mb-1">Nowy artykuł #@i</h6>
+                                <small class="text-muted">@DateTime.Now.AddDays(-i).ToString("dd.MM.yyyy")</small>
+                            </div>
+                            <p class="mb-1 small">Krótki opis artykułu numer @i o nowościach w świecie IT...</p>
+                        </a>
+                    }
+                </div>
+            </div>
+            <div class="card-footer text-center">
+                <a href="#" class="btn btn-sm btn-primary">Zobacz wszystkie</a>
+            </div>
+        </div>
+
+        <div class="card mb-4">
+            <div class="card-header">
+                <h6 class="m-0 font-weight-bold text-primary">Zadania do wykonania</h6>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="task1">
+                        <label class="form-check-label" for="task1">
+                            Zaktualizować ceny produktów promocyjnych
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="task2">
+                        <label class="form-check-label" for="task2">
+                            Dodać nowe artykuły na stronę
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="task3">
+                        <label class="form-check-label" for="task3">
+                            Sprawdzić statusy zamówień
+                        </label>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="task4">
+                        <label class="form-check-label" for="task4">
+                            Zaktualizować opisy produktów
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Nowe zadanie">
+                    <button class="btn btn-primary" type="button">Dodaj</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

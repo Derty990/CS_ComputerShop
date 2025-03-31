@@ -1,0 +1,78 @@
+﻿body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+.nav-link {
+    color: #333;
+    font-weight: 500;
+}
+
+    .nav-link:hover {
+        color: #0d6efd;
+    }
+
+.dropdown-item:active {
+    background-color: #0d6efd;
+}
+
+/* Product card styles */
+.product-card {
+    transition: all 0.3s;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+}
+
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+.product-title {
+    height: 48px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.blog-card {
+    transition: all 0.3s;
+}
+
+    .blog-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+.blog-image {
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Custom button styles */
+.btn-primary {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+    .btn-primary:hover {
+        background-color: #0b5ed7;
+        border-color: #0a58ca;
+    }
+
+/* Footer styles */
+footer a {
+    text-decoration: none;
+}
+
+    footer a:hover {
+        text-decoration: underline;
+    }
+
+/* Banner styles */
+.main-banner {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+}

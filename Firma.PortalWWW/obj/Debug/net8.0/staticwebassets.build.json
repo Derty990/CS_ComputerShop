@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "nmcMuu/2xD8HIoaxzhkxC28mwsXR11FwssQe2X1LCnI=",
+  "Hash": "gDKkz0GHwwKrgBlkKIq1Avi7iesiqQwVoHBMJBv6T+Q=",
   "Source": "Firma.PortalWWW",
   "BasePath": "_content/Firma.PortalWWW",
   "Mode": "Default",
@@ -120,6 +120,174 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\content\\3.png"
+    },
+    {
+      "Identity": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\bequietLightBase900FXARGB.jpg",
+      "SourceId": "Firma.PortalWWW",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\",
+      "BasePath": "_content/Firma.PortalWWW",
+      "RelativePath": "content/bequietLightBase900FXARGB#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "c5l2kmy46f",
+      "Integrity": "cFw4vX+hU6j2zcxxczaKDQIIlEJHFNI6IpJ8QNBSzOQ=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\content\\bequietLightBase900FXARGB.jpg"
+    },
+    {
+      "Identity": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\DarkProjectNovusPro.jpg",
+      "SourceId": "Firma.PortalWWW",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\",
+      "BasePath": "_content/Firma.PortalWWW",
+      "RelativePath": "content/DarkProjectNovusPro#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "rqlvaysrsk",
+      "Integrity": "Le7crmadnHXTmfFCPXurlRgYAw3Uk2robVv/PJCSO28=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\content\\DarkProjectNovusPro.jpg"
+    },
+    {
+      "Identity": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\DarkProjectSonoWireless.jpg",
+      "SourceId": "Firma.PortalWWW",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\",
+      "BasePath": "_content/Firma.PortalWWW",
+      "RelativePath": "content/DarkProjectSonoWireless#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "onnhf4pg86",
+      "Integrity": "BCGUnY55p9VlKmAoE4aRJ3Pvee4LPOPTuYOmqBBt2E0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\content\\DarkProjectSonoWireless.jpg"
+    },
+    {
+      "Identity": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\Liquid_Freezer_III_360_A-RGB__Black.jpg",
+      "SourceId": "Firma.PortalWWW",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\",
+      "BasePath": "_content/Firma.PortalWWW",
+      "RelativePath": "content/Liquid_Freezer_III_360_A-RGB__Black#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "2muts3sxc2",
+      "Integrity": "xjdN/gSQicjWHwTi8A/zIBa/5e9SRLZXcjRJdGnsHbE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\content\\Liquid_Freezer_III_360_A-RGB__Black.jpg"
+    },
+    {
+      "Identity": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\LiquidFreezerIII360BlackARGB.png",
+      "SourceId": "Firma.PortalWWW",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\",
+      "BasePath": "_content/Firma.PortalWWW",
+      "RelativePath": "content/LiquidFreezerIII360BlackARGB#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "b00pq3pke2",
+      "Integrity": "tV2o7gT4TLWjKr8RHE67CCMhi6mytwUw4h6YDvGfe8I=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\content\\LiquidFreezerIII360BlackARGB.png"
+    },
+    {
+      "Identity": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\rtx-5090-zotac.jpg",
+      "SourceId": "Firma.PortalWWW",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\",
+      "BasePath": "_content/Firma.PortalWWW",
+      "RelativePath": "content/rtx-5090-zotac#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "qdgdd2h4x3",
+      "Integrity": "0ubdFF54zZ/YrDSc6tyT6601uuWU11uF6NOXJL+pjow=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\content\\rtx-5090-zotac.jpg"
+    },
+    {
+      "Identity": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\XFXRX9070XT.jpg",
+      "SourceId": "Firma.PortalWWW",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\",
+      "BasePath": "_content/Firma.PortalWWW",
+      "RelativePath": "content/XFXRX9070XT#[.{fingerprint}]?.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "u8apazce5v",
+      "Integrity": "4gkcZBtJF6a6G+qaSr4kITDe4fdQ2yTf/ET4Vo8G+FI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\content\\XFXRX9070XT.jpg"
+    },
+    {
+      "Identity": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\css\\portal.css",
+      "SourceId": "Firma.PortalWWW",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\",
+      "BasePath": "_content/Firma.PortalWWW",
+      "RelativePath": "css/portal#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "s7bg9embw1",
+      "Integrity": "yF2TjnM+gPEl/ZqefXcQ13LLSqqHOI2xoWceIx+Sm/E=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\portal.css"
     },
     {
       "Identity": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\css\\site.css",
@@ -1626,6 +1794,662 @@
         {
           "Name": "integrity",
           "Value": "sha256-FhUm0ShMVFjKLV1fH4rBhU0LOf9jp+0KVBbSWZSWLSA="
+        }
+      ]
+    },
+    {
+      "Route": "content/bequietLightBase900FXARGB.c5l2kmy46f.jpg",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\bequietLightBase900FXARGB.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "221877"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cFw4vX+hU6j2zcxxczaKDQIIlEJHFNI6IpJ8QNBSzOQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 03:44:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c5l2kmy46f"
+        },
+        {
+          "Name": "label",
+          "Value": "content/bequietLightBase900FXARGB.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cFw4vX+hU6j2zcxxczaKDQIIlEJHFNI6IpJ8QNBSzOQ="
+        }
+      ]
+    },
+    {
+      "Route": "content/bequietLightBase900FXARGB.jpg",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\bequietLightBase900FXARGB.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "221877"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cFw4vX+hU6j2zcxxczaKDQIIlEJHFNI6IpJ8QNBSzOQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 03:44:15 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cFw4vX+hU6j2zcxxczaKDQIIlEJHFNI6IpJ8QNBSzOQ="
+        }
+      ]
+    },
+    {
+      "Route": "content/DarkProjectNovusPro.jpg",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\DarkProjectNovusPro.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1028108"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Le7crmadnHXTmfFCPXurlRgYAw3Uk2robVv/PJCSO28=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 03:40:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Le7crmadnHXTmfFCPXurlRgYAw3Uk2robVv/PJCSO28="
+        }
+      ]
+    },
+    {
+      "Route": "content/DarkProjectNovusPro.rqlvaysrsk.jpg",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\DarkProjectNovusPro.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1028108"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Le7crmadnHXTmfFCPXurlRgYAw3Uk2robVv/PJCSO28=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 03:40:24 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rqlvaysrsk"
+        },
+        {
+          "Name": "label",
+          "Value": "content/DarkProjectNovusPro.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Le7crmadnHXTmfFCPXurlRgYAw3Uk2robVv/PJCSO28="
+        }
+      ]
+    },
+    {
+      "Route": "content/DarkProjectSonoWireless.jpg",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\DarkProjectSonoWireless.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1136020"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BCGUnY55p9VlKmAoE4aRJ3Pvee4LPOPTuYOmqBBt2E0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 03:43:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BCGUnY55p9VlKmAoE4aRJ3Pvee4LPOPTuYOmqBBt2E0="
+        }
+      ]
+    },
+    {
+      "Route": "content/DarkProjectSonoWireless.onnhf4pg86.jpg",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\DarkProjectSonoWireless.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1136020"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BCGUnY55p9VlKmAoE4aRJ3Pvee4LPOPTuYOmqBBt2E0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 03:43:25 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "onnhf4pg86"
+        },
+        {
+          "Name": "label",
+          "Value": "content/DarkProjectSonoWireless.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BCGUnY55p9VlKmAoE4aRJ3Pvee4LPOPTuYOmqBBt2E0="
+        }
+      ]
+    },
+    {
+      "Route": "content/Liquid_Freezer_III_360_A-RGB__Black.2muts3sxc2.jpg",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\Liquid_Freezer_III_360_A-RGB__Black.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2515533"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xjdN/gSQicjWHwTi8A/zIBa/5e9SRLZXcjRJdGnsHbE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 29 Mar 2025 08:51:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2muts3sxc2"
+        },
+        {
+          "Name": "label",
+          "Value": "content/Liquid_Freezer_III_360_A-RGB__Black.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xjdN/gSQicjWHwTi8A/zIBa/5e9SRLZXcjRJdGnsHbE="
+        }
+      ]
+    },
+    {
+      "Route": "content/Liquid_Freezer_III_360_A-RGB__Black.jpg",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\Liquid_Freezer_III_360_A-RGB__Black.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2515533"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xjdN/gSQicjWHwTi8A/zIBa/5e9SRLZXcjRJdGnsHbE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 29 Mar 2025 08:51:07 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xjdN/gSQicjWHwTi8A/zIBa/5e9SRLZXcjRJdGnsHbE="
+        }
+      ]
+    },
+    {
+      "Route": "content/LiquidFreezerIII360BlackARGB.b00pq3pke2.png",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\LiquidFreezerIII360BlackARGB.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1393954"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tV2o7gT4TLWjKr8RHE67CCMhi6mytwUw4h6YDvGfe8I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 03:44:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "b00pq3pke2"
+        },
+        {
+          "Name": "label",
+          "Value": "content/LiquidFreezerIII360BlackARGB.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-tV2o7gT4TLWjKr8RHE67CCMhi6mytwUw4h6YDvGfe8I="
+        }
+      ]
+    },
+    {
+      "Route": "content/LiquidFreezerIII360BlackARGB.png",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\LiquidFreezerIII360BlackARGB.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1393954"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"tV2o7gT4TLWjKr8RHE67CCMhi6mytwUw4h6YDvGfe8I=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 03:44:21 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-tV2o7gT4TLWjKr8RHE67CCMhi6mytwUw4h6YDvGfe8I="
+        }
+      ]
+    },
+    {
+      "Route": "content/rtx-5090-zotac.jpg",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\rtx-5090-zotac.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "245579"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0ubdFF54zZ/YrDSc6tyT6601uuWU11uF6NOXJL+pjow=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 03:38:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0ubdFF54zZ/YrDSc6tyT6601uuWU11uF6NOXJL+pjow="
+        }
+      ]
+    },
+    {
+      "Route": "content/rtx-5090-zotac.qdgdd2h4x3.jpg",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\rtx-5090-zotac.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "245579"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0ubdFF54zZ/YrDSc6tyT6601uuWU11uF6NOXJL+pjow=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 03:38:01 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qdgdd2h4x3"
+        },
+        {
+          "Name": "label",
+          "Value": "content/rtx-5090-zotac.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0ubdFF54zZ/YrDSc6tyT6601uuWU11uF6NOXJL+pjow="
+        }
+      ]
+    },
+    {
+      "Route": "content/XFXRX9070XT.jpg",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\XFXRX9070XT.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "169403"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4gkcZBtJF6a6G+qaSr4kITDe4fdQ2yTf/ET4Vo8G+FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 03:44:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4gkcZBtJF6a6G+qaSr4kITDe4fdQ2yTf/ET4Vo8G+FI="
+        }
+      ]
+    },
+    {
+      "Route": "content/XFXRX9070XT.u8apazce5v.jpg",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\XFXRX9070XT.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "169403"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4gkcZBtJF6a6G+qaSr4kITDe4fdQ2yTf/ET4Vo8G+FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 03:44:41 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "u8apazce5v"
+        },
+        {
+          "Name": "label",
+          "Value": "content/XFXRX9070XT.jpg"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4gkcZBtJF6a6G+qaSr4kITDe4fdQ2yTf/ET4Vo8G+FI="
+        }
+      ]
+    },
+    {
+      "Route": "css/portal.css",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\css\\portal.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1404"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yF2TjnM+gPEl/ZqefXcQ13LLSqqHOI2xoWceIx+Sm/E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 03:30:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-yF2TjnM+gPEl/ZqefXcQ13LLSqqHOI2xoWceIx+Sm/E="
+        }
+      ]
+    },
+    {
+      "Route": "css/portal.s7bg9embw1.css",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\css\\portal.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1404"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"yF2TjnM+gPEl/ZqefXcQ13LLSqqHOI2xoWceIx+Sm/E=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 03:30:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "s7bg9embw1"
+        },
+        {
+          "Name": "label",
+          "Value": "css/portal.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-yF2TjnM+gPEl/ZqefXcQ13LLSqqHOI2xoWceIx+Sm/E="
         }
       ]
     },

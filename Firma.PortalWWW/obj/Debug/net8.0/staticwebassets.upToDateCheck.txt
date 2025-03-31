@@ -1,6 +1,14 @@
 wwwroot\content\1.png
 wwwroot\content\2.png
 wwwroot\content\3.png
+wwwroot\content\bequietLightBase900FXARGB.jpg
+wwwroot\content\DarkProjectNovusPro.jpg
+wwwroot\content\DarkProjectSonoWireless.jpg
+wwwroot\content\Liquid_Freezer_III_360_A-RGB__Black.jpg
+wwwroot\content\LiquidFreezerIII360BlackARGB.png
+wwwroot\content\rtx-5090-zotac.jpg
+wwwroot\content\XFXRX9070XT.jpg
+wwwroot\css\portal.css
 wwwroot\css\site.css
 wwwroot\favicon.ico
 wwwroot\js\site.js
