@@ -6,6 +6,7 @@ wwwroot\content\DarkProjectNovusPro.jpg
 wwwroot\content\DarkProjectSonoWireless.jpg
 wwwroot\content\Liquid_Freezer_III_360_A-RGB__Black.jpg
 wwwroot\content\LiquidFreezerIII360BlackARGB.png
+wwwroot\content\msirx.png
 wwwroot\content\rtx-5090-zotac.jpg
 wwwroot\content\XFXRX9070XT.jpg
 wwwroot\css\portal.css

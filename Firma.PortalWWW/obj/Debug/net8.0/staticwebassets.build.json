@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "gDKkz0GHwwKrgBlkKIq1Avi7iesiqQwVoHBMJBv6T+Q=",
+  "Hash": "vvlrITi4QiCiXYHFgDpotMCYwV1gAPE9CX8mv2A7p9g=",
   "Source": "Firma.PortalWWW",
   "BasePath": "_content/Firma.PortalWWW",
   "Mode": "Default",
@@ -227,6 +227,27 @@
       "OriginalItemSpec": "wwwroot\\content\\LiquidFreezerIII360BlackARGB.png"
     },
     {
+      "Identity": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\msirx.png",
+      "SourceId": "Firma.PortalWWW",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\",
+      "BasePath": "_content/Firma.PortalWWW",
+      "RelativePath": "content/msirx#[.{fingerprint}]?.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "fxdfg9t38d",
+      "Integrity": "Q1gQWwFOQ69iUMawSP+BANnzZDObVIUKy+g2ZZI0lg4=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\content\\msirx.png"
+    },
+    {
       "Identity": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\rtx-5090-zotac.jpg",
       "SourceId": "Firma.PortalWWW",
       "SourceType": "Discovered",
@@ -283,8 +304,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "s7bg9embw1",
-      "Integrity": "yF2TjnM+gPEl/ZqefXcQ13LLSqqHOI2xoWceIx+Sm/E=",
+      "Fingerprint": "k5e1prdppb",
+      "Integrity": "6BLec3Kv2bkyo9dp7suFL5Y6ND6vzxR7Gkzj2oz6LxI=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\portal.css"
@@ -2208,6 +2229,88 @@
       ]
     },
     {
+      "Route": "content/msirx.fxdfg9t38d.png",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\msirx.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1804313"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q1gQWwFOQ69iUMawSP+BANnzZDObVIUKy+g2ZZI0lg4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 04:28:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fxdfg9t38d"
+        },
+        {
+          "Name": "label",
+          "Value": "content/msirx.png"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q1gQWwFOQ69iUMawSP+BANnzZDObVIUKy+g2ZZI0lg4="
+        }
+      ]
+    },
+    {
+      "Route": "content/msirx.png",
+      "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\msirx.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1804313"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Q1gQWwFOQ69iUMawSP+BANnzZDObVIUKy+g2ZZI0lg4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 01 Apr 2025 04:28:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Q1gQWwFOQ69iUMawSP+BANnzZDObVIUKy+g2ZZI0lg4="
+        }
+      ]
+    },
+    {
       "Route": "content/rtx-5090-zotac.jpg",
       "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\content\\rtx-5090-zotac.jpg",
       "Selectors": [],
@@ -2382,7 +2485,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1404"
+          "Value": "2039"
         },
         {
           "Name": "Content-Type",
@@ -2390,11 +2493,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"yF2TjnM+gPEl/ZqefXcQ13LLSqqHOI2xoWceIx+Sm/E=\""
+          "Value": "\"6BLec3Kv2bkyo9dp7suFL5Y6ND6vzxR7Gkzj2oz6LxI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 03:30:44 GMT"
+          "Value": "Tue, 01 Apr 2025 04:29:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2404,12 +2507,12 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-yF2TjnM+gPEl/ZqefXcQ13LLSqqHOI2xoWceIx+Sm/E="
+          "Value": "sha256-6BLec3Kv2bkyo9dp7suFL5Y6ND6vzxR7Gkzj2oz6LxI="
         }
       ]
     },
     {
-      "Route": "css/portal.s7bg9embw1.css",
+      "Route": "css/portal.k5e1prdppb.css",
       "AssetFile": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.PortalWWW\\wwwroot\\css\\portal.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -2419,7 +2522,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1404"
+          "Value": "2039"
         },
         {
           "Name": "Content-Type",
@@ -2427,11 +2530,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"yF2TjnM+gPEl/ZqefXcQ13LLSqqHOI2xoWceIx+Sm/E=\""
+          "Value": "\"6BLec3Kv2bkyo9dp7suFL5Y6ND6vzxR7Gkzj2oz6LxI=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 03:30:44 GMT"
+          "Value": "Tue, 01 Apr 2025 04:29:30 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -2441,7 +2544,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "s7bg9embw1"
+          "Value": "k5e1prdppb"
         },
         {
           "Name": "label",
@@ -2449,7 +2552,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-yF2TjnM+gPEl/ZqefXcQ13LLSqqHOI2xoWceIx+Sm/E="
+          "Value": "sha256-6BLec3Kv2bkyo9dp7suFL5Y6ND6vzxR7Gkzj2oz6LxI="
         }
       ]
     },

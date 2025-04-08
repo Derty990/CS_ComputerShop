@@ -1,0 +1,333 @@
+﻿@model Firma.PortalWWW.Models.Shop.ProductViewModel
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<div class="container py-5">
+    <!-- Nawigacja okruszkowa -->
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Strona główna</a></li>
+            <li class="breadcrumb-item"><a asp-controller="Shop" asp-action="Index">Sklep</a></li>
+            <li class="breadcrumb-item"><a href="#">@Model.Category</a></li>
+            <li class="breadcrumb-item active" aria-current="page">@Model.Name</li>
+        </ol>
+    </nav>
+
+    <div class="row">
+        <!-- Zdjęcie produktu -->
+        <div class="col-md-5 mb-4">
+            <div class="card border-0">
+                <div class="position-relative">
+                    @if (Model.IsOnSale)
+                    {
+                        <span class="position-absolute top-0 end-0 bg-danger text-white m-2 px-2 py-1 rounded-3">
+                            Promocja
+                        </span>
+                    }
+                    <img src="@(string.IsNullOrEmpty(Model.ImageUrl) ? "https://placehold.co/600x400/000000/FFFFFF/png" : Model.ImageUrl)"
+                         class="card-img-top rounded" alt="@Model.Name">
+                </div>
+                <div class="row mt-3 g-2">
+                    <!-- Miniaturki zdjęć (demo) -->
+                    @for (int i = 1; i <= 4; i++)
+                    {
+                        <div class="col-3">
+                            <div class="border rounded p-1 @(i == 1 ? "border-primary" : "")">
+                                <img src="@(string.IsNullOrEmpty(Model.ImageUrl) ? "https://placehold.co/600x400/000000/FFFFFF/png" : Model.ImageUrl)"
+                                     class="img-fluid" alt="Thumbnail @i">
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Szczegóły produktu -->
+        <div class="col-md-7">
+            <h1 class="mb-2">@Model.Name</h1>
+            
+            <!-- Oceny i recenzje -->
+            <div class="d-flex align-items-center mb-3">
+                <div class="text-warning me-2">
+                    @for (int i = 1; i <= 5; i++)
+                    {
+                        if (i <= Math.Floor(Model.Rating))
+                        {
+                            <i class="bi bi-star-fill"></i>
+                        }
+                        else if (i - Model.Rating > 0 && i - Model.Rating < 1)
+                        {
+                            <i class="bi bi-star-half"></i>
+                        }
+                        else
+                        {
+                            <i class="bi bi-star"></i>
+                        }
+                    }
+                </div>
+                <span class="text-muted">@Model.Rating/5 (@Model.Reviews recenzji)</span>
+            </div>
+
+            <!-- Cena -->
+            <div class="mb-3">
+                @if (Model.OldPrice.HasValue)
+                {
+                    <h3 class="text-danger mb-0">@Model.Price.ToString("C0")</h3>
+                    <span class="text-muted text-decoration-line-through">@Model.OldPrice.Value.ToString("C0")</span>
+                    <span class="badge bg-danger ms-2">
+                        Oszczędzasz @((Model.OldPrice.Value - Model.Price).ToString("C0"))
+                    </span>
+                }
+                else
+                {
+                    <h3 class="mb-0">@Model.Price.ToString("C0")</h3>
+                }
+            </div>
+
+            <!-- Dostępność -->
+            <div class="mb-3">
+                <span class="badge bg-@(Model.IsInStock ? "success" : "danger")">
+                    @(Model.IsInStock ? "W magazynie" : "Niedostępny")
+                </span>
+                @if (Model.IsInStock)
+                {
+                    <span class="ms-2 text-success"><i class="bi bi-truck"></i> Wysyłka w 24h</span>
+                }
+            </div>
+
+            <!-- Krótki opis -->
+            <p class="mb-4">@Model.ShortDescription</p>
+
+            <!-- Formularz dodawania do koszyka -->
+            <form class="mb-4">
+                <div class="row">
+                    <div class="col-md-3 mb-3">
+                        <label for="quantity" class="form-label">Ilość</label>
+                        <input type="number" class="form-control" id="quantity" min="1" value="1" @(Model.IsInStock ? "" : "disabled")>
+                    </div>
+                </div>
+                <div class="d-flex gap-2">
+                    <button type="button" class="btn btn-primary btn-lg" @(Model.IsInStock ? "" : "disabled")>
+                        <i class="bi bi-cart-plus me-2"></i>Dodaj do koszyka
+                    </button>
+                    <button type="button" class="btn btn-outline-danger">
+                        <i class="bi bi-heart"></i>
+                    </button>
+                    <button type="button" class="btn btn-outline-secondary">
+                        <i class="bi bi-arrow-left-right"></i>
+                    </button>
+                </div>
+            </form>
+
+            <!-- Dodatkowe informacje -->
+            <div class="row mb-4">
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-shield-check text-success me-2 fs-5"></i>
+                        <span>Gwarancja 24 miesiące</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-box-seam text-primary me-2 fs-5"></i>
+                        <span>Bezpłatny zwrot do 30 dni</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center mb-2">
+                        <i class="bi bi-credit-card text-info me-2 fs-5"></i>
+                        <span>Różne metody płatności</span>
+                    </div>
+                    <div class="d-flex align-items-center">
+                        <i class="bi bi-headset text-warning me-2 fs-5"></i>
+                        <span>Wsparcie techniczne 24/7</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Przyciski udostępniania -->
+            <div class="mb-4">
+                <p class="text-muted mb-2">Udostępnij produkt:</p>
+                <div class="d-flex gap-2">
+                    <a href="#" class="btn btn-sm btn-outline-primary"><i class="bi bi-facebook"></i></a>
+                    <a href="#" class="btn btn-sm btn-outline-info"><i class="bi bi-twitter"></i></a>
+                    <a href="#" class="btn btn-sm btn-outline-danger"><i class="bi bi-pinterest"></i></a>
+                    <a href="#" class="btn btn-sm btn-outline-success"><i class="bi bi-whatsapp"></i></a>
+                    <a href="#" class="btn btn-sm btn-outline-secondary"><i class="bi bi-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Karty z dodatkowymi informacjami -->
+    <div class="row mt-5">
+        <div class="col-12">
+            <ul class="nav nav-tabs" id="productTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="description-tab" data-bs-toggle="tab" data-bs-target="#description" type="button" role="tab" aria-controls="description" aria-selected="true">Opis</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="specs-tab" data-bs-toggle="tab" data-bs-target="#specs" type="button" role="tab" aria-controls="specs" aria-selected="false">Specyfikacja</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="reviews-tab" data-bs-toggle="tab" data-bs-target="#reviews" type="button" role="tab" aria-controls="reviews" aria-selected="false">Recenzje (@Model.Reviews)</button>
+                </li>
+            </ul>
+            <div class="tab-content p-4 border border-top-0 rounded-bottom" id="productTabsContent">
+                <div class="tab-pane fade show active" id="description" role="tabpanel" aria-labelledby="description-tab">
+                    <p>@Model.Description</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+                <div class="tab-pane fade" id="specs" role="tabpanel" aria-labelledby="specs-tab">
+                    <div class="table-responsive">
+                        <table class="table table-striped">
+                            <tbody>
+                                <tr>
+                                    <th>Model</th>
+                                    <td>@Model.Name</td>
+                                </tr>
+                                <tr>
+                                    <th>Kategoria</th>
+                                    <td>@Model.Category</td>
+                                </tr>
+                                <tr>
+                                    <th>Gwarancja</th>
+                                    <td>24 miesiące</td>
+                                </tr>
+                                <tr>
+                                    <th>Dostępność</th>
+                                    <td>@(Model.IsInStock ? "W magazynie" : "Niedostępny")</td>
+                                </tr>
+                                <!-- Dalejmozna dodać inne recenzje blablabla -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="reviews" role="tabpanel" aria-labelledby="reviews-tab">
+                    <!-- Przykładowe recenzje -->
+                    <div class="mb-4">
+                        <h5>Recenzje klientów</h5>
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="text-warning me-2">
+                                @for (int i = 0; i < 5; i++)
+                                {
+                                    <i class="bi bi-star-fill"></i>
+                                }
+                            </div>
+                            <span class="ms-2">Świetny produkt!</span>
+                        </div>
+                        <p class="mb-1">Jan Kowalski</p>
+                        <p class="text-muted small">Dodano: 15.01.2025</p>
+                        <p>Bardzo dobry produkt, spełnia wszystkie moje oczekiwania. Polecam!</p>
+                        <hr>
+                    </div>
+                    
+                    <!-- Formularz dodawania recenzji -->
+                    <div>
+                        <h5>Dodaj swoją recenzję</h5>
+                        <form>
+                            <div class="mb-3">
+                                <label class="form-label">Twoja ocena</label>
+                                <div class="rating">
+                                    <div class="text-warning">
+                                        @for (int i = 1; i <= 5; i++)
+                                        {
+                                            <i class="bi bi-star fs-4 me-1"></i>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="reviewName" class="form-label">Imię</label>
+                                <input type="text" class="form-control" id="reviewName">
+                            </div>
+                            <div class="mb-3">
+                                <label for="reviewTitle" class="form-label">Tytuł recenzji</label>
+                                <input type="text" class="form-control" id="reviewTitle">
+                            </div>
+                            <div class="mb-3">
+                                <label for="reviewContent" class="form-label">Treść recenzji</label>
+                                <textarea class="form-control" id="reviewContent" rows="3"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Dodaj recenzję</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Powiązane produkty -->
+    <div class="mt-5">
+        <h3 class="mb-4">Podobne produkty</h3>
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+            @for (int i = 1; i <= 4; i++)
+            {
+                var index = (Model.Id + i) % 12;
+                index = index == 0 ? 12 : index;
+                
+                <div class="col">
+                    <div class="card h-100 product-card">
+                        <a asp-action="Product" asp-route-id="@index" class="text-decoration-none">
+                            <img src="https://placehold.co/600x400/000000/FFFFFF/png" class="card-img-top" alt="Powiązany produkt @i">
+                        </a>
+                        <div class="card-body">
+                            <h6 class="card-subtitle text-muted mb-1">Kategoria</h6>
+                            <h5 class="card-title product-title">
+                                <a asp-action="Product" asp-route-id="@index" class="text-decoration-none text-dark">
+                                    Podobny produkt @i
+                                </a>
+                            </h5>
+                            <p class="text-danger fw-bold">@(1000+i*100) zł</p>
+                        </div>
+                        <div class="card-footer bg-white border-top-0">
+                            <button class="btn btn-sm btn-primary w-100">Dodaj do koszyka</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        // Skrypt do obsługi ocen w formularzu recenzji
+        document.addEventListener('DOMContentLoaded', function() {
+            const stars = document.querySelectorAll('.rating .bi-star');
+            
+            stars.forEach((star, index) => {
+                star.addEventListener('mouseover', () => {
+                    for(let i=0; i <= index; i++) {
+                        stars[i].classList.remove('bi-star');
+                        stars[i].classList.add('bi-star-fill');
+                    }
+                });
+
+               star.addEventListener('mouseout', () => {
+                    stars.forEach(s => {
+                        s.classList.remove('bi-star-fill');
+                        s.classList.add('bi-star');
+                    });
+                });
+
+                star.addEventListener('click', () => {
+                    // Resetowanie wszystkich gwiazdek
+                    stars.forEach(s => {
+                        s.classList.remove('bi-star-fill');
+                        s.classList.add('bi-star');
+                    });
+
+                    // Wypełnienie gwiazdek do wybranej
+                    for(let i=0; i <= index; i++) {
+                        stars[i].classList.remove('bi-star');
+                        stars[i].classList.add('bi-star-fill');
+                    }
+
+                    //TODO: Tutaj mogę dodać kod do zapisania wybranej oceny, jeszcze zobacze co i jak
+                    console.log(`Wybrano ocenę: ${index + 1}`);
+                });
+            });
+        });
+    </script>
+}

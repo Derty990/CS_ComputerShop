@@ -144,6 +144,24 @@
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\content\Liquid_Freezer_III_360_A-RGB__Black.jpg'))</OriginalItemSpec>
     </StaticWebAsset>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\content\msirx.png'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Firma.PortalWWW</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Firma.PortalWWW</BasePath>
+      <RelativePath>content/msirx.png</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>fxdfg9t38d</Fingerprint>
+      <Integrity>Q1gQWwFOQ69iUMawSP+BANnzZDObVIUKy+g2ZZI0lg4=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\content\msirx.png'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\content\rtx-5090-zotac.jpg'))">
       <SourceType>Package</SourceType>
       <SourceId>Firma.PortalWWW</SourceId>
@@ -192,8 +210,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>s7bg9embw1</Fingerprint>
-      <Integrity>yF2TjnM+gPEl/ZqefXcQ13LLSqqHOI2xoWceIx+Sm/E=</Integrity>
+      <Fingerprint>k5e1prdppb</Fingerprint>
+      <Integrity>6BLec3Kv2bkyo9dp7suFL5Y6ND6vzxR7Gkzj2oz6LxI=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\portal.css'))</OriginalItemSpec>
