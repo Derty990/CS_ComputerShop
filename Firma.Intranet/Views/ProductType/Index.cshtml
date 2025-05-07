@@ -13,43 +13,53 @@
                 </a>
             </div>
             <div class="card-body">
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                        <thead class="table-light">
-                            <tr>
-                                <th width="60">ID</th>
-                                <th>@Html.DisplayNameFor(model => model.Name)</th>
-                                <th>@Html.DisplayNameFor(model => model.Description)</th>
-                                <th>Ilość produktów</th>
-                                <th width="150">Akcje</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @foreach (var item in Model)
-                            {
+                @if (!Model.Any())
+                {
+                    <div class="alert alert-info" role="alert">
+                        Brak zdefiniowanych kategorii. Kliknij przycisk "Dodaj nową kategorię", aby utworzyć pierwszą.
+                    </div>
+                }
+                else
+                {
+                    <div class="table-responsive">
+                        <table class="table table-hover table-striped table-bordered">
+                            <thead class="table-light">
                                 <tr>
-                                    <td>@item.IdProductType</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
-                                    <td>@Html.DisplayFor(modelItem => item.Description)</td>
-                                    <td>@(item.Products?.Count ?? 0)</td>
-                                    <td>
-                                        <div class="btn-group btn-group-sm">
-                                            <a asp-action="Details" asp-route-id="@item.IdProductType" class="btn btn-info" title="Szczegóły">
-                                                <i class="bi bi-eye"></i>
-                                            </a>
-                                            <a asp-action="Edit" asp-route-id="@item.IdProductType" class="btn btn-primary" title="Edytuj">
-                                                <i class="bi bi-pencil"></i>
-                                            </a>
-                                            <a asp-action="Delete" asp-route-id="@item.IdProductType" class="btn btn-danger" title="Usuń">
-                                                <i class="bi bi-trash"></i>
-                                            </a>
-                                        </div>
-                                    </td>
+                                    <th width="60">ID</th>
+                                    <th>@Html.DisplayNameFor(model => model.Name)</th>
+                                    <th>@Html.DisplayNameFor(model => model.Description)</th>
+                                    <th>Ilość produktów</th>
+                                    <th width="150">Akcje</th>
                                 </tr>
-                            }
-                        </tbody>
-                    </table>
-                </div>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.IdProductType</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                        <td>@Html.DisplayFor(modelItem => item.Description)</td>
+                                        <td>@(item.Products?.Count ?? 0)</td>
+                                        <td>
+                                            <div class="btn-group btn-group-sm">
+                                                <a asp-action="Details" asp-route-id="@item.IdProductType" class="btn btn-info" title="Szczegóły">
+                                                    <i class="bi bi-eye"></i>
+                                                </a>
+                                                <a asp-action="Edit" asp-route-id="@item.IdProductType" class="btn btn-primary" title="Edytuj">
+                                                    <i class="bi bi-pencil-square"></i>
+                                                </a>
+                                                <a asp-action="Delete" asp-route-id="@item.IdProductType" class="btn btn-danger" title="Usuń">
+                                                    <i class="bi bi-trash"></i>
+                                                </a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                }
+                
             </div>
         </div>
     </div>

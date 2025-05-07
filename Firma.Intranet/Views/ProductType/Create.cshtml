@@ -1,38 +1,56 @@
 ﻿@model Firma.Data.Data.Shop.ProductType
 
 @{
-    ViewData["Title"] = "Create";
+    // ViewData["Title"] = "Create"; // Możemy to ustawić bardziej opisowo
+    ViewData["Title"] = "Dodaj nową kategorię";
 }
 
-<h1>Create</h1>
+<h1>@ViewData["Title"]</h1>
 
-<h4>ProductType</h4>
+<h4>Kategoria Produktu</h4> @* Zamiast "ProductType" *@
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
+        @* Możesz dostosować szerokość kolumny, np. col-md-6 lub col-lg-8 dla szerszego formularza *@
         <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div> @* To jest OK - podsumowanie błędów nieprzypisanych do konkretnych pól *@
+
+            <div class="mb-3">
+                @* Używamy mb-3 (Bootstrap 5) zamiast form-group *@
+                <label asp-for="Name" class="form-label"></label> @* Zmieniamy control-label na form-label *@
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
+
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                @* Dla opisu lepiej użyć textarea, jeśli może być dłuższy *@
+                <textarea asp-for="Description" class="form-control" rows="3"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <div class="mt-4">
+                @* Większy margines górny dla przycisków *@
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-check-circle me-1"></i> Utwórz
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left-circle me-1"></i> Anuluj i wróć do listy
+                </a>
             </div>
         </form>
     </div>
 </div>
 
+@* Usunięty stary link "Back to List", bo dodaliśmy przycisk "Anuluj" *@
+@*
 <div>
     <a asp-action="Index">Back to List</a>
 </div>
+*@
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
