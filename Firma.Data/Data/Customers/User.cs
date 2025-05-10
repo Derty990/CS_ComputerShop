@@ -36,7 +36,6 @@ namespace Firma.Data.Data.Customers
         public ICollection<Order> Orders { get; set; } = new List<Order>();
         public ICollection<Cart> CartItems { get; set; } = new List<Cart>();
 
-       
     }
 
     public enum UserRole

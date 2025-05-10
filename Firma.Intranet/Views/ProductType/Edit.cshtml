@@ -9,24 +9,23 @@
 <h4>Kategoria Produktu: @Model.Name</h4> @* Można dodać nazwę edytowanej kategorii dla kontekstu *@
 <hr />
 <div class="row">
-    <div class="col-md-6">
-        @* Dostosuj szerokość kolumny według potrzeb *@
+    <div class="col-md-6"> 
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IdProductType" /> @* Kluczowe dla edycji - nie usuwaj! *@
-
+            <input type="hidden" asp-for="IdProductType" />
+            
             <div class="mb-3">
                 <label asp-for="Name" class="form-label"></label>
                 <input asp-for="Name" class="form-control" />
                 <span asp-validation-for="Name" class="text-danger"></span>
             </div>
-
+            
             <div class="mb-3">
                 <label asp-for="Description" class="form-label"></label>
                 <textarea asp-for="Description" class="form-control" rows="3"></textarea>
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-
+            
             <div class="mt-4">
                 <button type="submit" class="btn btn-primary">
                     <i class="bi bi-save me-1"></i> Zapisz zmiany
@@ -40,7 +39,5 @@
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

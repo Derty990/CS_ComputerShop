@@ -14,13 +14,13 @@ namespace Firma.Data.Data.Shop
         public int IdUser { get; set; }
 
         [ForeignKey("IdUser")]
-        public required User User { get; set; }
+        public User? User { get; set; }
 
         [Required(ErrorMessage = "IdProduct is required")]
         public int IdProduct { get; set; }
 
         [ForeignKey("IdProduct")]
-        public required Product Product { get; set; }
+        public Product? Product { get; set; }
 
         [Required(ErrorMessage = "Quantity is required")]
         [Range(1, int.MaxValue, ErrorMessage = "Quantity must be at least 1")]

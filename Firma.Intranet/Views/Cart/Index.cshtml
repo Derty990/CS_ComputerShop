@@ -1,47 +1,77 @@
 ﻿@model IEnumerable<Firma.Data.Data.Shop.Cart>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Zarządzanie Zawartością Koszyków";
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.User)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Product)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quantity)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.User.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Product.Code)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdCart">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdCart">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdCart">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h6 class="m-0 font-weight-bold text-primary">Pozycje w koszykach</h6>
+        <a asp-action="Create" class="btn btn-sm btn-primary">
+            <i class="bi bi-cart-plus-fill me-1"></i> Dodaj pozycję do koszyka
+        </a>
+    </div>
+    <div class="card-body">
+        @if (!Model.Any())
+        {
+            <div class="alert alert-info" role="alert">
+                Brak pozycji w koszykach.
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-hover table-striped table-bordered">
+                    <thead class="table-light">
+                        <tr>
+                            <th>
+                                @Html.DisplayNameFor(model => model.User.Name) @* Lub User.Email, zależnie co preferujesz *@
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Product.Name) @* Lub Product.Code *@
+                            </th>
+                            <th>
+                                @Html.DisplayNameFor(model => model.Quantity)
+                            </th>
+                            <th width="130">Akcje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.User.Name) (@Html.DisplayFor(modelItem => item.User.Email))
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Product.Name)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Quantity)
+                                </td>
+                                <td>
+                                    <div class="btn-group btn-group-sm">
+                                        @* Jeśli Details nie jest potrzebne dla Cart, możesz usunąć ten link/przycisk *@
+                                        @*
+                                        <a asp-action="Details" asp-route-id="@item.IdCart" class="btn btn-info" title="Szczegóły">
+                                            <i class="bi bi-eye"></i>
+                                        </a>
+                                        *@
+                                        <a asp-action="Edit" asp-route-id="@item.IdCart" class="btn btn-primary" title="Edytuj">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
+                                        <a asp-action="Delete" asp-route-id="@item.IdCart" class="btn btn-danger" title="Usuń">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</div>

@@ -22,7 +22,8 @@ namespace Firma.Intranet.Controllers
         // GET: Topicality
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Topicality.ToListAsync());
+            // return View(await _context.Topicality.ToListAsync()); // Standardowo
+            return View(await _context.Topicality.OrderBy(t => t.Position).ToListAsync()); // Z sortowaniem
         }
 
         // GET: Topicality/Details/5

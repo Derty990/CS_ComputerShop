@@ -1,44 +1,101 @@
 ﻿@model Firma.Data.Data.Customers.Order
+@using Firma.Data.Data.Customers // Dla OrderStatus
 
 @{
-    ViewData["Title"] = "Edit";
+    ViewData["Title"] = "Edytuj zamówienie";
+    // Ładujemy OrderItems i Product dla prawej kolumny (jeśli kontroler je przekazał)
+    var orderItems = Model.OrderItems ?? new List<OrderItem>();
+    decimal totalValue = orderItems.Sum(oi => oi.Quantity * oi.UnitPrice);
 }
 
-<h1>Edit</h1>
+<h1>@ViewData["Title"]</h1>
 
-<h4>Order</h4>
+<h4>Zamówienie #@Model.IdOrder dla @Model.User?.Name</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-7">
+        @* Zmieniona szerokość kolumn *@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="IdOrder" />
-            <div class="form-group">
-                <label asp-for="IdUser" class="control-label"></label>
-                <select asp-for="IdUser" class="form-control" asp-items="ViewBag.IdUser"></select>
+
+            <div class="mb-3">
+                <label asp-for="IdUser" class="form-label">Użytkownik</label>
+                @* Zrobione readonly - zwykle nie zmieniamy klienta dla istniejącego zamówienia *@
+                <select asp-for="IdUser" class="form-select" asp-items="ViewBag.IdUser" disabled>
+                    @* Dodane disabled *@
+                </select>
+                <input type="hidden" asp-for="IdUser" /> @* Trzeba przesłać ukrytą wartość, bo disabled nie wysyła *@
                 <span asp-validation-for="IdUser" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="OrderDate" class="control-label"></label>
-                <input asp-for="OrderDate" class="form-control" />
+
+            <div class="mb-3">
+                <label asp-for="OrderDate" class="form-label"></label>
+                <input asp-for="OrderDate" class="form-control" type="datetime-local" />
                 <span asp-validation-for="OrderDate" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Status" class="control-label"></label>
-                <select asp-for="Status" class="form-control"></select>
+
+            <div class="mb-3">
+                <label asp-for="Status" class="form-label"></label>
+                <select asp-for="Status" class="form-select" asp-items="Html.GetEnumSelectList<OrderStatus>()"></select>
                 <span asp-validation-for="Status" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
+
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-save me-1"></i> Zapisz zmiany
+                </button>
+                <a asp-action="Index" class="btn btn-secondary">
+                    <i class="bi bi-arrow-left-circle me-1"></i> Anuluj
+                </a>
+                <a asp-controller="OrderItem" asp-action="Index" asp-route-orderId="@Model.IdOrder" class="btn btn-outline-info ms-2">
+                    <i class="bi bi-list-task"></i> Zarządzaj pozycjami (@orderItems.Count())
+                </a>
             </div>
         </form>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
+    <div class="col-md-5">
+        @* Zmieniona szerokość kolumn *@
+        <h5>Pozycje w zamówieniu:</h5>
+        @if (!orderItems.Any())
+        {
+            <p>Brak pozycji w tym zamówieniu.</p>
+            <a asp-controller="OrderItem" asp-action="Create" asp-route-orderId="@Model.IdOrder" class="btn btn-sm btn-success">
+                <i class="bi bi-plus-circle"></i> Dodaj pierwszą pozycję
+            </a>
+        }
+        else
+        {
+            <ul class="list-group mb-3">
+                @foreach (var item in orderItems)
+                {
+                    <li class="list-group-item d-flex justify-content-between align-items-center lh-sm">
+                        <div>
+                            <h6 class="my-0">@item.Product?.Name</h6>
+                            <small class="text-muted">Ilość: @item.Quantity</small>
+                        </div>
+                        <span class="text-muted">@item.UnitPrice.ToString("C")</span>
+                        @* Linki do edycji/usunięcia pozycji OrderItem można dodać tutaj, kierując do OrderItemController *@
+                        <span class="ms-2">
+                            <a asp-controller="OrderItem" asp-action="Edit" asp-route-id="@item.IdOrderItem" class="btn btn-sm btn-outline-primary p-1" title="Edytuj pozycję"><i class="bi bi-pencil-square"></i></a>
+                            <a asp-controller="OrderItem" asp-action="Delete" asp-route-id="@item.IdOrderItem" class="btn btn-sm btn-outline-danger p-1" title="Usuń pozycję"><i class="bi bi-trash"></i></a>
+                        </span>
+                    </li>
+                }
+                <li class="list-group-item d-flex justify-content-between">
+                    <span>Suma (PLN)</span>
+                    <strong>@totalValue.ToString("C")</strong>
+                </li>
+            </ul>
+            <a asp-controller="OrderItem" asp-action="Create" asp-route-orderId="@Model.IdOrder" class="btn btn-sm btn-success">
+                <i class="bi bi-plus-circle"></i> Dodaj kolejną pozycję
+            </a>
+        }
+    </div>
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

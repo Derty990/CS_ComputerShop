@@ -1,46 +1,92 @@
 ﻿@model Firma.Data.Data.Customers.OrderItem
 
 @{
-    ViewData["Title"] = "Create";
+    string title = "Dodaj pozycję do zamówienia";
+    if (Model.IdOrder > 0) // Jeśli IdOrder jest już ustawione (przekazane z linku)
+    {
+        title += $" #{Model.IdOrder}";
+    }
+    ViewData["Title"] = title;
 }
 
-<h1>Create</h1>
+<h1>@ViewData["Title"]</h1>
 
-<h4>OrderItem</h4>
+<h4>Nowa pozycja</h4>
 <hr />
 <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-6">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="IdOrder" class="control-label"></label>
-                <select asp-for="IdOrder" class ="form-control" asp-items="ViewBag.IdOrder"></select>
+
+            <div class="mb-3">
+                <label asp-for="IdOrder" class="form-label">Zamówienie</label>
+                @* Jeśli IdOrder jest przekazane, można zrobić pole readonly lub hidden *@
+                @if (Model.IdOrder > 0)
+                {
+                    <input type="hidden" asp-for="IdOrder" />
+                    <select asp-for="IdOrder" class="form-select" asp-items="ViewBag.IdOrder" disabled></select>
+                    <small class="form-text text-muted">Zamówienie wybrane automatycznie.</small>
+                }
+                else
+                {
+                    <select asp-for="IdOrder" class="form-select" asp-items="ViewBag.IdOrder">
+                        <option value="">-- Wybierz zamówienie --</option>
+                    </select>
+                }
+                <span asp-validation-for="IdOrder" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="IdProduct" class="control-label"></label>
-                <select asp-for="IdProduct" class ="form-control" asp-items="ViewBag.IdProduct"></select>
+
+            <div class="mb-3">
+                <label asp-for="IdProduct" class="form-label">Produkt</label>
+                <select asp-for="IdProduct" class="form-select" asp-items="ViewBag.IdProduct">
+                    <option value="">-- Wybierz produkt --</option>
+                </select>
+                <span asp-validation-for="IdProduct" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Quantity" class="control-label"></label>
-                <input asp-for="Quantity" class="form-control" />
-                <span asp-validation-for="Quantity" class="text-danger"></span>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="Quantity" class="form-label"></label>
+                        <input asp-for="Quantity" class="form-control" type="number" min="1" value="1" /> @* Domyślna ilość 1 *@
+                        <span asp-validation-for="Quantity" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="mb-3">
+                        <label asp-for="UnitPrice" class="form-label">Cena Jednostkowa</label>
+                        <input asp-for="UnitPrice" class="form-control" type="number" step="0.01" />
+                        <span asp-validation-for="UnitPrice" class="text-danger"></span>
+                        @* Można dodać skrypt JS, który pobierze cenę po wybraniu produktu *@
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="UnitPrice" class="control-label"></label>
-                <input asp-for="UnitPrice" class="form-control" />
-                <span asp-validation-for="UnitPrice" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+
+            <div class="mt-4">
+                <button type="submit" class="btn btn-primary">
+                    <i class="bi bi-check-circle me-1"></i> Dodaj pozycję
+                </button>
+                @* Link powrotu - jeśli znam IdOrder, wracam do edycji zamówienia *@
+                @if (Model.IdOrder > 0)
+                {
+                    <a asp-controller="Order" asp-action="Edit" asp-route-id="@Model.IdOrder" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left-circle me-1"></i> Anuluj (Wróć do zam. #@Model.IdOrder)
+                    </a>
+                }
+                else
+                {
+                    <a asp-action="Index" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left-circle me-1"></i> Anuluj (Wróć do listy)
+                    </a>
+                }
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
-
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    @* Potencjalnie skrypt JS do pobierania ceny produktu *@
 }

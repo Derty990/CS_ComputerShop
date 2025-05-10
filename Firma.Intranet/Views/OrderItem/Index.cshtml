@@ -1,53 +1,84 @@
 ﻿@model IEnumerable<Firma.Data.Data.Customers.OrderItem>
 
 @{
-    ViewData["Title"] = "Index";
+    // Ustawiamy tytuł dynamicznie, jeśli jest filtrowanie
+    string pageTitle = "Pozycje Zamówień";
+    if (ViewBag.OrderFilterInfo != null)
+    {
+        pageTitle += " " + ViewBag.OrderFilterInfo;
+    }
+    ViewData["Title"] = pageTitle;
 }
 
-<h1>Index</h1>
+<h1>@ViewData["Title"]</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Order)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Product)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Quantity)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.UnitPrice)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Order.IdOrder)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Product.Code)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Quantity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.UnitPrice)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdOrderItem">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdOrderItem">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdOrderItem">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+<div class="card mb-4">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h6 class="m-0 font-weight-bold text-primary">Lista pozycji w zamówieniach</h6>
+        @* Przycisk Create może przekazywać orderId, jeśli jesteśmy w widoku filtrowanym *@
+        <a asp-action="Create" asp-route-orderId="@ViewBag.OrderId" class="btn btn-sm btn-primary">
+            <i class="bi bi-plus-circle me-1"></i> Dodaj nową pozycję
+        </a>
+    </div>
+    <div class="card-body">
+        @if (!Model.Any())
+        {
+            <div class="alert alert-info" role="alert">
+                Brak pozycji zamówień @(ViewBag.OrderFilterInfo != null ? ViewBag.OrderFilterInfo : "w systemie").
+            </div>
+        }
+        else
+        {
+            <div class="table-responsive">
+                <table class="table table-hover table-striped table-bordered">
+                    <thead class="table-light">
+                        <tr>
+                            <th>ID Zam.</th>
+                            <th>Produkt</th>
+                            <th>@Html.DisplayNameFor(model => model.Quantity)</th>
+                            <th>Cena jedn.</th>
+                            <th>Wartość</th>
+                            <th width="130">Akcje</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @* Link do edycji nadrzędnego zamówienia *@
+                                    <a asp-controller="Order" asp-action="Edit" asp-route-id="@item.IdOrder">
+                                        @item.IdOrder
+                                    </a>
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.Product.Name)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                                <td>@item.UnitPrice.ToString("C")</td>
+                                <td>@((item.Quantity * item.UnitPrice).ToString("C"))</td>
+                                <td>
+                                    <div class="btn-group btn-group-sm">
+                                        <a asp-action="Edit" asp-route-id="@item.IdOrderItem" class="btn btn-primary" title="Edytuj pozycję">
+                                            <i class="bi bi-pencil-square"></i>
+                                        </a>
+                                        @* Delete pomijamy na życzenie *@
+                                        <a asp-action="Delete" asp-route-id="@item.IdOrderItem" class="btn btn-danger" title="Usuń pozycję">
+                                            <i class="bi bi-trash"></i>
+                                        </a>
+                                    </div>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+    @if (ViewBag.OrderId != null) // Przycisk powrotu do zamówienia, jeśli filtrowano
+    {
+        <div class="card-footer">
+            <a asp-controller="Order" asp-action="Edit" asp-route-id="@ViewBag.OrderId" class="btn btn-secondary">
+                <i class="bi bi-arrow-left-circle me-1"></i> Wróć do zamówienia #@ViewBag.OrderId
+            </a>
+        </div>
+    }
+</div>
