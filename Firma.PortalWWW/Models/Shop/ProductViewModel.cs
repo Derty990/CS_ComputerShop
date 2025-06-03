@@ -10,6 +10,7 @@
         public required string ShortDescription { get; set; }
         public required string ImageUrl { get; set; }
         public required string Category { get; set; }
+        public int CategoryId { get; set; }
         public double Rating { get; set; }
         public int Reviews { get; set; }
         public bool IsOnSale { get; set; }

@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Firma.Data.Data.Customers.OrderItem>
 
 @{
-    // Ustawiamy tytuł dynamicznie, jeśli jest filtrowanie
+    // Ustawiam tytuł dynamicznie, jeśli jest filtrowanie
     string pageTitle = "Pozycje Zamówień";
     if (ViewBag.OrderFilterInfo != null)
     {
@@ -15,7 +15,7 @@
 <div class="card mb-4">
     <div class="card-header d-flex justify-content-between align-items-center">
         <h6 class="m-0 font-weight-bold text-primary">Lista pozycji w zamówieniach</h6>
-        @* Przycisk Create może przekazywać orderId, jeśli jesteśmy w widoku filtrowanym *@
+        @* Przycisk Create może przekazywać orderId, jeśli jestem w widoku filtrowanym *@
         <a asp-action="Create" asp-route-orderId="@ViewBag.OrderId" class="btn btn-sm btn-primary">
             <i class="bi bi-plus-circle me-1"></i> Dodaj nową pozycję
         </a>
@@ -60,7 +60,6 @@
                                         <a asp-action="Edit" asp-route-id="@item.IdOrderItem" class="btn btn-primary" title="Edytuj pozycję">
                                             <i class="bi bi-pencil-square"></i>
                                         </a>
-                                        @* Delete pomijamy na życzenie *@
                                         <a asp-action="Delete" asp-route-id="@item.IdOrderItem" class="btn btn-danger" title="Usuń pozycję">
                                             <i class="bi bi-trash"></i>
                                         </a>

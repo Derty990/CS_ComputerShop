@@ -1,186 +1,229 @@
-﻿@model List<Firma.PortalWWW.Models.Shop.ProductViewModel>
+﻿@model IEnumerable<Firma.PortalWWW.Models.Shop.ProductViewModel>
+@using Firma.Data.Data.Shop 
+
 @{
-    ViewData["Title"] = "Sklep - Wszystkie produkty";
+    ViewData["Title"] = "Sklep";
+    if (ViewBag.SelectedCategoryName != null)
+    {
+        ViewData["Title"] += " - " + ViewBag.SelectedCategoryName;
+    }
+    // Pobieramy aktualne wartości filtrów z ViewBag, aby ustawić je w formularzu
+    string currentSearch = ViewBag.CurrentSearch as string;
+    string currentSort = ViewBag.CurrentSort as string ?? "nameAsc"; // Domyślne sortowanie, jeśli null
+    int? currentCategoryId = ViewBag.CurrentCategoryId as int?;
 }
 
 <div class="container py-5">
-    <!-- Nagłówek strony -->
     <div class="mb-4">
-        <h1 class="mb-3">Nasze produkty</h1>
+        <h1 class="mb-3">
+            @if (ViewBag.SelectedCategoryName != null)
+            {
+                @ViewBag.SelectedCategoryName
+            }
+            else if (!string.IsNullOrEmpty(currentSearch))
+            {
+                @:Wyniki wyszukiwania dla "@currentSearch"
+            }
+            else
+            {
+                @:Nasze produkty
+            }
+        </h1>
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Strona główna</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Sklep</li>
+                @if (ViewBag.SelectedCategoryName != null)
+                {
+                    <li class="breadcrumb-item"><a asp-controller="Shop" asp-action="Index">Sklep</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">@ViewBag.SelectedCategoryName</li>
+                }
+                else
+                {
+                    <li class="breadcrumb-item active" aria-current="page">Sklep</li>
+                }
             </ol>
         </nav>
     </div>
 
     <div class="row">
-        <!-- Filtry boczne -->
         <div class="col-md-3 mb-4">
-            <!-- Kategorie -->
-            <div class="card mb-4">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">Kategorie</h5>
-                </div>
-                <div class="list-group list-group-flush">
-                    <a href="#" class="list-group-item list-group-item-action">Wszystkie produkty</a>  
-                    <a href="#" class="list-group-item list-group-item-action">Komputery</a>
-                    <a href="#" class="list-group-item list-group-item-action">Podzespoły</a>
-                    <a href="#" class="list-group-item list-group-item-action">Peryferia</a>
-                </div>
-            </div>
-
-            <!-- Filtry cenowe -->
-            <div class="card mb-4">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">Filtruj wg ceny</h5>
-                </div>
-                <div class="card-body">
-                    <div class="mb-3">
-                        <label for="priceRange" class="form-label">Maksymalna cena: <span id="priceValue">5000</span> zł</label>
-                        <input type="range" class="form-range" id="priceRange" min="0" max="5000" step="100" value="5000">
-                    </div>
-                    <button class="btn btn-outline-primary w-100">Zastosuj filtr</button>
-                </div>
-            </div>
-
-            <!-- Tagi produktów -->
-            <div class="card">
-                <div class="card-header bg-primary text-white">
-                    <h5 class="mb-0">Tagi produktów</h5>
-                </div>
-                <div class="card-body">
-                    <div class="d-flex flex-wrap gap-2">
-                        <a href="#" class="btn btn-sm btn-outline-secondary">Nowość</a>
-                        <a href="#" class="btn btn-sm btn-outline-secondary">Promocja</a>
-                        <a href="#" class="btn btn-sm btn-outline-secondary">Gaming</a>
-                        <a href="#" class="btn btn-sm btn-outline-secondary">Grafika</a>
+            @* Formularz obejmujący wszystkie filtry i sortowanie *@
+            <form asp-action="Index" asp-controller="Shop" method="get">
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white"><h5 class="mb-0">Wyszukaj</h5></div>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Nazwa, opis..." name="searchString" value="@currentSearch">
+                            <button class="btn btn-outline-primary" type="submit"><i class="bi bi-search"></i></button>
+                        </div>
                     </div>
                 </div>
-            </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Kategorie</h5>
+                    </div>
+                    <div class="list-group list-group-flush">
+                        <button type="submit" name="categoryId" value="" class="list-group-item list-group-item-action @(currentCategoryId == null ? "active" : "")">
+                            Wszystkie produkty
+                        </button>
+                        @if (ViewBag.ProductTypes != null)
+                        {
+                            foreach (var category in (IEnumerable<ProductType>)ViewBag.ProductTypes)
+                            {
+                                <button type="submit" name="categoryId" value="@category.IdProductType"
+                                        class="list-group-item list-group-item-action @(currentCategoryId == category.IdProductType ? "active" : "")">
+                                    @category.Name
+                                </button>
+                            }
+                        }
+                    </div>
+                </div>
+
+                <div class="card mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Filtruj wg ceny</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="priceRange" class="form-label">Maksymalna cena: <span id="priceValue">5000</span> zł</label>
+                            <input type="range" class="form-range" id="priceRange" min="0" max="5000" step="100" value="5000" name="maxPrice">
+                        </div>
+                        <button class="btn btn-outline-primary w-100" type="submit">Zastosuj filtr ceny</button>
+                    </div>
+                </div>
+
+                @* Ukryte pole do przekazywania aktualnego sortowania, gdy zmienia się inny filtr *@
+                @if (!string.IsNullOrEmpty(currentSort) && currentSort != "nameAsc")
+                {
+                    <input type="hidden" name="sortBy" value="@currentSort" />
+                }
+            </form> @* Koniec formularza filtrów *@
         </div>
 
-        <!-- Lista produktów -->
         <div class="col-md-9">
-            <!-- Górny pasek filtrowania i sortowania -->
             <div class="card mb-4">
                 <div class="card-body d-flex justify-content-between align-items-center">
                     <div>
-                        <span>Pokazuje <strong>@Model.Count</strong> produktów</span>
+                        @if (Model != null)
+                        {
+                            <span>Pokazuje <strong>@Model.Count()</strong> produktów</span>
+                        }
                     </div>
                     <div class="d-flex align-items-center">
-                        <label class="me-2">Sortuj według:</label>
-                        <select class="form-select form-select-sm" style="width: auto;">
-                            <option selected>Popularność</option>
-                            <option>Cena: od najniższej</option>
-                            <option>Cena: od najwyższej</option>
-                            <option>Ocena klientów</option>
-                            <option>Nazwa: A-Z</option>
-                        </select>
+                        <form asp-action="Index" asp-controller="Shop" method="get" id="sortForm" class="d-flex align-items-center">
+                            @* Ukryte pola do przekazywania aktualnych filtrów przy zmianie sortowania *@
+                            @if (!string.IsNullOrEmpty(currentSearch))
+                            {
+                                <input type="hidden" name="searchString" value="@currentSearch" />
+                            }
+                            @if (currentCategoryId.HasValue)
+                            {
+                                <input type="hidden" name="categoryId" value="@currentCategoryId.Value" />
+                            }
+                            @* Można dodać też maxPrice, jeśli jest używane *@
+
+                            <label class="me-2" for="sortBySelect">Sortuj według:</label>
+                            <select class="form-select form-select-sm" style="width: auto;" name="sortBy" id="sortBySelect" onchange="document.getElementById('sortForm').submit();">
+                                <option value="nameAsc" selected="@(currentSort == "nameAsc")">Nazwa: A-Z</option>
+                                <option value="nameDesc" selected="@(currentSort == "nameDesc")">Nazwa: Z-A</option>
+                                <option value="priceAsc" selected="@(currentSort == "priceAsc")">Cena: od najniższej</option>
+                                <option value="priceDesc" selected="@(currentSort == "priceDesc")">Cena: od najwyższej</option>
+                                @* <option value="popularity" selected="@(currentSort == "popularity")">Popularność</option> *@
+                            </select>
+                        </form>
                     </div>
                 </div>
             </div>
 
-            <!-- Siatka produktów -->
-            <div class="row row-cols-1 row-cols-md-3 g-4">
-                @foreach (var product in Model)
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-4">
+                @if (Model != null && Model.Any())
                 {
-                    <div class="col">
-                        <div class="card h-100 product-card d-flex flex-column">
-                            @if (product.IsOnSale)
-                            {
-                                <span class="position-absolute top-0 end-0 bg-danger text-white m-2 px-2 py-1 rounded-3 small">
-                                    Promocja
-                                </span>
-                            }
-                            <a asp-action="Product" asp-route-id="@product.Id" class="text-decoration-none">
-                                <img src="@(string.IsNullOrEmpty(product.ImageUrl) ? "https://via.placeholder.com/300" : product.ImageUrl)"
-                                     class="card-img-top" alt="@product.Name">
-                            </a>
-                            <div class="card-body d-flex flex-column">
-                                <h6 class="card-subtitle text-muted mb-1">@product.Category</h6>
-                                <h5 class="card-title product-title flex-grow-0">
-                                    <a asp-action="Product" asp-route-id="@product.Id" class="text-decoration-none text-dark">
-                                        @product.Name
-                                    </a>
-                                </h5>
-                                <div class="d-flex align-items-center mb-2">
-                                    <div class="text-warning me-1">
-                                        @for (int i = 1; i <= 5; i++)
-                                        {
-                                            if (i <= Math.Floor(product.Rating))
+                    foreach (var product in Model)
+                    {
+                        <div class="col">
+                            <div class="card h-100 product-card d-flex flex-column">
+                                @if (product.IsOnSale) // Jeśli ProductViewModel ma to pole i jest ono ustawiane
+                                {
+                                    <span class="position-absolute top-0 end-0 bg-danger text-white m-2 px-2 py-1 rounded-3 small">
+                                        Promocja
+                                    </span>
+                                }
+                                <a asp-action="Product" asp-controller="Shop" asp-route-id="@product.Id" class="text-decoration-none">
+                                    <img src="@(string.IsNullOrEmpty(product.ImageUrl) ? "/content/placeholder-product.png" : product.ImageUrl)"
+                                         class="card-img-top" alt="@product.Name" style="height: 200px; object-fit: contain; padding-top:10px;">
+                                </a>
+                                <div class="card-body d-flex flex-column">
+                                    <h6 class="card-subtitle text-muted mb-1">@product.Category</h6>
+                                    <h5 class="card-title product-title flex-grow-1">
+                                        <a asp-action="Product" asp-controller="Shop" asp-route-id="@product.Id" class="text-decoration-none text-dark">
+                                            @product.Name
+                                        </a>
+                                    </h5>
+                                    <div class="mt-auto">
+                                        @* Ta sekcja na dole karty *@
+                                        <div>
+                                            @if (product.OldPrice.HasValue) // Jeśli ProductViewModel ma to pole
                                             {
-                                                <i class="bi bi-star-fill small"></i>
-                                            }
-                                            else if (i - product.Rating > 0 && i - product.Rating < 1)
-                                            {
-                                                <i class="bi bi-star-half small"></i>
+                                                <span class="text-danger fw-bold">@product.Price.ToString("C")</span>
+                                                <small class="text-muted text-decoration-line-through ms-2">@product.OldPrice.Value.ToString("C")</small>
                                             }
                                             else
                                             {
-                                                <i class="bi bi-star small"></i>
+                                                <span class="fw-bold fs-5">@product.Price.ToString("C")</span>
                                             }
-                                        }
+                                        </div>
+                                        <span class="badge bg-@(product.IsInStock ? "success" : "danger") mt-1">
+                                            @* Jeśli ProductViewModel ma to pole *@
+                                            @(product.IsInStock ? "W magazynie" : "Niedostępny")
+                                        </span>
                                     </div>
-                                    <small class="text-muted">(@product.Reviews)</small>
                                 </div>
-                                
-                                <div class="mt-auto">
-                                    <div>
-                                        @if (product.OldPrice.HasValue)
-                                        {
-                                            <span class="text-danger fw-bold">@product.Price.ToString("C0")</span>
-                                            <small class="text-muted text-decoration-line-through ms-2">@product.OldPrice.Value.ToString("C0")</small>
-                                        }
-                                        else
-                                        {
-                                            <span class="fw-bold">@product.Price.ToString("C0")</span>
-                                        }
+                                <div class="card-footer bg-white border-top-0">
+                                    <div class="d-grid gap-2 d-md-flex justify-content-between">
+                                        <a asp-action="Product" asp-controller="Shop" asp-route-id="@product.Id" class="btn btn-sm btn-outline-secondary">
+                                            <i class="bi bi-eye me-1"></i> Szczegóły
+                                        </a>
+                                        <button type="button" class="btn btn-sm btn-primary add-to-cart-btn" data-product-id="@product.Id" @(product.IsInStock ? "" : "disabled")>
+                                            @* Funkcjonalność do dodania później *@
+                                            <i class="bi bi-cart-plus me-1"></i> Dodaj
+                                        </button>
                                     </div>
-                                    <span class="badge bg-@(product.IsInStock ? "success" : "danger")">
-                                        @(product.IsInStock ? "W magazynie" : "Niedostępny")
-                                    </span>
-                                </div>
-                            </div>
-                            <div class="card-footer bg-white border-top-0">
-                                <div class="d-grid gap-2 d-md-flex justify-content-between">
-                                    <a asp-action="Product" asp-route-id="@product.Id" class="btn btn-sm btn-outline-secondary">
-                                        <i class="bi bi-eye me-1"></i> Szczegóły
-                                    </a>
-                                    <button class="btn btn-sm btn-primary" @(product.IsInStock ? "" : "disabled")>
-                                        <i class="bi bi-cart-plus me-1"></i> Dodaj
-                                    </button>
                                 </div>
                             </div>
                         </div>
+                    }
+                }
+                else
+                {
+                    <div class="col-12">
+                        <p class="text-center">Brak produktów spełniających wybrane kryteria.</p>
                     </div>
                 }
             </div>
 
-            <!-- Paginacja -->
-            <nav class="my-4">
-                <ul class="pagination justify-content-center">
-                    <li class="page-item disabled">
-                        <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Poprzednia</a>
-                    </li>
-                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
-                    <li class="page-item">
-                        <a class="page-link" href="#">Następna</a>
-                    </li>
-                </ul>
-            </nav>
+            @* TODO: Implementacja paginacji, jeśli jest potrzebna *@
+            @* <nav aria-label="Page navigation example" class="mt-5">
+        <ul class="pagination justify-content-center">
+            <li class="page-item disabled"><a class="page-link" href="#">Poprzednia</a></li>
+            <li class="page-item active"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">Następna</a></li>
+        </ul>
+    </nav> *@
         </div>
     </div>
 </div>
 
 @section Scripts {
     <script>
-        // Aktualizacja wyświetlanej wartości suwaka ceny
-        document.getElementById('priceRange').addEventListener('input', function() {
-            document.getElementById('priceValue').textContent = this.value;
-        });
+        const priceRange = document.getElementById('priceRange');
+        const priceValue = document.getElementById('priceValue');
+        if (priceRange && priceValue) {
+            priceRange.addEventListener('input', function() {
+                priceValue.textContent = this.value;
+            });
+        }
     </script>
 }

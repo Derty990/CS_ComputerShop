@@ -1,4 +1,5 @@
-﻿@model Firma.Data.Data.CMS.Page
+﻿@using Firma.Data.Data.CMS
+@model Firma.Data.Data.CMS.Page
 
 @{
     ViewData["Title"] = "Edytuj stronę";
@@ -41,6 +42,15 @@
                 <label asp-for="Position" class="form-label"></label>
                 <input asp-for="Position" class="form-control" type="number" />
                 <span asp-validation-for="Position" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="MenuPlacement" class="control-label"></label>
+                <select asp-for="MenuPlacement" class="form-control"
+                        asp-items="Html.GetEnumSelectList<PageMenuPlacement>()">
+                    <option value="">-- Wybierz miejsce --</option>
+                </select>
+                <span asp-validation-for="MenuPlacement" class="text-danger"></span>
             </div>
 
             <div class="mt-4">

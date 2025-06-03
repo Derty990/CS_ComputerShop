@@ -14,6 +14,10 @@ namespace Firma.Data.Data.Shop
 
         public string Description { get; set; } = string.Empty;
 
+        [Display(Name = "URL zdjęcia")]
+        [MaxLength(255)] // Przykładowa maksymalna długość URL
+        public string? PhotoUrl { get; set; } // Może być null, jeśli kategoria nie ma zdjęcia
+
         //to jest obsługa relacji 1 do wielu (towar ma jeden rodzaj, rodzaj ma wiele towarów danego rodzaju)
         //kod po stronie wiele - rodzaj ma wiele towarów danego rodzaju
         public ICollection<Product> Products { get; } = new List<Product>();

@@ -23,7 +23,9 @@ namespace Firma.Intranet.Controllers
         // GET: Order
         public async Task<IActionResult> Index()
         {
-            var firmaIntranetContext = _context.Order.Include(o => o.User);
+            var firmaIntranetContext = _context.Order
+                                    .Include(o => o.User)       
+                                    .Include(o => o.OrderItems); 
             return View(await firmaIntranetContext.ToListAsync());
         }
 
@@ -78,12 +80,19 @@ namespace Firma.Intranet.Controllers
                 return NotFound();
             }
 
-            var order = await _context.Order.FindAsync(id);
+            var order = await _context.Order
+         .Include(o => o.User)                 // Dołącz dane użytkownika
+         .Include(o => o.OrderItems)           // Dołącz kolekcję pozycji zamówienia
+             .ThenInclude(oi => oi.Product)    // Dla każdej pozycji, dołącz dane produktu
+         .FirstOrDefaultAsync(o => o.IdOrder == id);
             if (order == null)
             {
                 return NotFound();
             }
+            // Przygotowanie SelectList dla użytkownika (jeśli ma być edytowalne,
+            // chociaż w widoku Edit.cshtml są 'disabled')
             ViewData["IdUser"] = new SelectList(_context.User, "IdUser", "Email", order.IdUser);
+
             return View(order);
         }
 

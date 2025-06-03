@@ -29,7 +29,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 08 May 2025 05:34:24 GMT"
+          "Value": "Tue, 03 Jun 2025 00:11:54 GMT"
         }
       ],
       "EndpointProperties": [
@@ -74,7 +74,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Thu, 08 May 2025 05:34:24 GMT"
+          "Value": "Tue, 03 Jun 2025 00:11:54 GMT"
         }
       ],
       "EndpointProperties": [
@@ -85,8 +85,172 @@
       ]
     },
     {
-      "Route": "content/1.530mik9pr7.png",
-      "AssetFile": "content/1.png",
+      "Route": "content/mobo/mobo.2brd13ub3u.jpg",
+      "AssetFile": "content/mobo/mobo.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "342747"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fviu1CLbWLQOckjT5VaFgmZkPhMQqI8RL6lIm28PmiM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 00:59:54 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2brd13ub3u"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-fviu1CLbWLQOckjT5VaFgmZkPhMQqI8RL6lIm28PmiM="
+        },
+        {
+          "Name": "label",
+          "Value": "content/mobo/mobo.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/mobo/mobo.jpg",
+      "AssetFile": "content/mobo/mobo.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "342747"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"fviu1CLbWLQOckjT5VaFgmZkPhMQqI8RL6lIm28PmiM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 00:59:54 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-fviu1CLbWLQOckjT5VaFgmZkPhMQqI8RL6lIm28PmiM="
+        }
+      ]
+    },
+    {
+      "Route": "content/placeholder/placeholder-category.5t9iyzn0yp.jpg",
+      "AssetFile": "content/placeholder/placeholder-category.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "109269"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KUAJOYDfBpNxuv4z10Wa/KezxpRuyawU7R4gEOXSSiA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 00:44:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5t9iyzn0yp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-KUAJOYDfBpNxuv4z10Wa/KezxpRuyawU7R4gEOXSSiA="
+        },
+        {
+          "Name": "label",
+          "Value": "content/placeholder/placeholder-category.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/placeholder/placeholder-category.jpg",
+      "AssetFile": "content/placeholder/placeholder-category.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "109269"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KUAJOYDfBpNxuv4z10Wa/KezxpRuyawU7R4gEOXSSiA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 00:44:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-KUAJOYDfBpNxuv4z10Wa/KezxpRuyawU7R4gEOXSSiA="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/1.530mik9pr7.png",
+      "AssetFile": "content/producttypes/1.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -125,13 +289,13 @@
         },
         {
           "Name": "label",
-          "Value": "content/1.png"
+          "Value": "content/producttypes/1.png"
         }
       ]
     },
     {
-      "Route": "content/1.png",
-      "AssetFile": "content/1.png",
+      "Route": "content/producttypes/1.png",
+      "AssetFile": "content/producttypes/1.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -167,8 +331,8 @@
       ]
     },
     {
-      "Route": "content/2.fo89vgje44.png",
-      "AssetFile": "content/2.png",
+      "Route": "content/producttypes/2.fo89vgje44.png",
+      "AssetFile": "content/producttypes/2.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -207,13 +371,13 @@
         },
         {
           "Name": "label",
-          "Value": "content/2.png"
+          "Value": "content/producttypes/2.png"
         }
       ]
     },
     {
-      "Route": "content/2.png",
-      "AssetFile": "content/2.png",
+      "Route": "content/producttypes/2.png",
+      "AssetFile": "content/producttypes/2.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -249,8 +413,8 @@
       ]
     },
     {
-      "Route": "content/3.aklv0zoq77.png",
-      "AssetFile": "content/3.png",
+      "Route": "content/producttypes/3.aklv0zoq77.png",
+      "AssetFile": "content/producttypes/3.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -289,13 +453,13 @@
         },
         {
           "Name": "label",
-          "Value": "content/3.png"
+          "Value": "content/producttypes/3.png"
         }
       ]
     },
     {
-      "Route": "content/3.png",
-      "AssetFile": "content/3.png",
+      "Route": "content/producttypes/3.png",
+      "AssetFile": "content/producttypes/3.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -331,8 +495,8 @@
       ]
     },
     {
-      "Route": "content/DarkProjectNovusPro.jpg",
-      "AssetFile": "content/DarkProjectNovusPro.jpg",
+      "Route": "content/producttypes/DarkProjectNovusPro.jpg",
+      "AssetFile": "content/producttypes/DarkProjectNovusPro.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -368,8 +532,8 @@
       ]
     },
     {
-      "Route": "content/DarkProjectNovusPro.rqlvaysrsk.jpg",
-      "AssetFile": "content/DarkProjectNovusPro.jpg",
+      "Route": "content/producttypes/DarkProjectNovusPro.rqlvaysrsk.jpg",
+      "AssetFile": "content/producttypes/DarkProjectNovusPro.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -408,13 +572,13 @@
         },
         {
           "Name": "label",
-          "Value": "content/DarkProjectNovusPro.jpg"
+          "Value": "content/producttypes/DarkProjectNovusPro.jpg"
         }
       ]
     },
     {
-      "Route": "content/DarkProjectSonoWireless.jpg",
-      "AssetFile": "content/DarkProjectSonoWireless.jpg",
+      "Route": "content/producttypes/DarkProjectSonoWireless.jpg",
+      "AssetFile": "content/producttypes/DarkProjectSonoWireless.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -450,8 +614,8 @@
       ]
     },
     {
-      "Route": "content/DarkProjectSonoWireless.onnhf4pg86.jpg",
-      "AssetFile": "content/DarkProjectSonoWireless.jpg",
+      "Route": "content/producttypes/DarkProjectSonoWireless.onnhf4pg86.jpg",
+      "AssetFile": "content/producttypes/DarkProjectSonoWireless.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -490,13 +654,13 @@
         },
         {
           "Name": "label",
-          "Value": "content/DarkProjectSonoWireless.jpg"
+          "Value": "content/producttypes/DarkProjectSonoWireless.jpg"
         }
       ]
     },
     {
-      "Route": "content/LiquidFreezerIII360BlackARGB.b00pq3pke2.png",
-      "AssetFile": "content/LiquidFreezerIII360BlackARGB.png",
+      "Route": "content/producttypes/LiquidFreezerIII360BlackARGB.b00pq3pke2.png",
+      "AssetFile": "content/producttypes/LiquidFreezerIII360BlackARGB.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -535,13 +699,13 @@
         },
         {
           "Name": "label",
-          "Value": "content/LiquidFreezerIII360BlackARGB.png"
+          "Value": "content/producttypes/LiquidFreezerIII360BlackARGB.png"
         }
       ]
     },
     {
-      "Route": "content/LiquidFreezerIII360BlackARGB.png",
-      "AssetFile": "content/LiquidFreezerIII360BlackARGB.png",
+      "Route": "content/producttypes/LiquidFreezerIII360BlackARGB.png",
+      "AssetFile": "content/producttypes/LiquidFreezerIII360BlackARGB.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -577,172 +741,8 @@
       ]
     },
     {
-      "Route": "content/Liquid_Freezer_III_360_A-RGB__Black.2muts3sxc2.jpg",
-      "AssetFile": "content/Liquid_Freezer_III_360_A-RGB__Black.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2515533"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"xjdN/gSQicjWHwTi8A/zIBa/5e9SRLZXcjRJdGnsHbE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 29 Mar 2025 08:51:07 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "2muts3sxc2"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-xjdN/gSQicjWHwTi8A/zIBa/5e9SRLZXcjRJdGnsHbE="
-        },
-        {
-          "Name": "label",
-          "Value": "content/Liquid_Freezer_III_360_A-RGB__Black.jpg"
-        }
-      ]
-    },
-    {
-      "Route": "content/Liquid_Freezer_III_360_A-RGB__Black.jpg",
-      "AssetFile": "content/Liquid_Freezer_III_360_A-RGB__Black.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "2515533"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"xjdN/gSQicjWHwTi8A/zIBa/5e9SRLZXcjRJdGnsHbE=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Sat, 29 Mar 2025 08:51:07 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-xjdN/gSQicjWHwTi8A/zIBa/5e9SRLZXcjRJdGnsHbE="
-        }
-      ]
-    },
-    {
-      "Route": "content/XFXRX9070XT.jpg",
-      "AssetFile": "content/XFXRX9070XT.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=3600, must-revalidate"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "169403"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"4gkcZBtJF6a6G+qaSr4kITDe4fdQ2yTf/ET4Vo8G+FI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 03:44:41 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-4gkcZBtJF6a6G+qaSr4kITDe4fdQ2yTf/ET4Vo8G+FI="
-        }
-      ]
-    },
-    {
-      "Route": "content/XFXRX9070XT.u8apazce5v.jpg",
-      "AssetFile": "content/XFXRX9070XT.jpg",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "169403"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "image/jpeg"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"4gkcZBtJF6a6G+qaSr4kITDe4fdQ2yTf/ET4Vo8G+FI=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Mon, 31 Mar 2025 03:44:41 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "u8apazce5v"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-4gkcZBtJF6a6G+qaSr4kITDe4fdQ2yTf/ET4Vo8G+FI="
-        },
-        {
-          "Name": "label",
-          "Value": "content/XFXRX9070XT.jpg"
-        }
-      ]
-    },
-    {
-      "Route": "content/bequietLightBase900FXARGB.c5l2kmy46f.jpg",
-      "AssetFile": "content/bequietLightBase900FXARGB.jpg",
+      "Route": "content/producttypes/bequietLightBase900FXARGB.c5l2kmy46f.jpg",
+      "AssetFile": "content/producttypes/bequietLightBase900FXARGB.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -781,13 +781,13 @@
         },
         {
           "Name": "label",
-          "Value": "content/bequietLightBase900FXARGB.jpg"
+          "Value": "content/producttypes/bequietLightBase900FXARGB.jpg"
         }
       ]
     },
     {
-      "Route": "content/bequietLightBase900FXARGB.jpg",
-      "AssetFile": "content/bequietLightBase900FXARGB.jpg",
+      "Route": "content/producttypes/bequietLightBase900FXARGB.jpg",
+      "AssetFile": "content/producttypes/bequietLightBase900FXARGB.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -823,8 +823,1648 @@
       ]
     },
     {
-      "Route": "content/msirx.fxdfg9t38d.png",
-      "AssetFile": "content/msirx.png",
+      "Route": "content/producttypes/cpu/12400f.aid5of4ft9.jpg",
+      "AssetFile": "content/producttypes/cpu/12400f.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14084"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ooftO9Z/YwpoHODSieivJJoMRV2QC7TVmQrtNATWR9k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:45:08 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "aid5of4ft9"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ooftO9Z/YwpoHODSieivJJoMRV2QC7TVmQrtNATWR9k="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/cpu/12400f.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/12400f.jpg",
+      "AssetFile": "content/producttypes/cpu/12400f.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14084"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ooftO9Z/YwpoHODSieivJJoMRV2QC7TVmQrtNATWR9k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:45:08 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ooftO9Z/YwpoHODSieivJJoMRV2QC7TVmQrtNATWR9k="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/14400f.0irmcnjngf.jpg",
+      "AssetFile": "content/producttypes/cpu/14400f.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13548"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uGx6H3QtM5p3GVkRCp578a5IUTUvOg4v2GUtSUMGbLc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:45:00 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "0irmcnjngf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-uGx6H3QtM5p3GVkRCp578a5IUTUvOg4v2GUtSUMGbLc="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/cpu/14400f.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/14400f.jpg",
+      "AssetFile": "content/producttypes/cpu/14400f.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13548"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"uGx6H3QtM5p3GVkRCp578a5IUTUvOg4v2GUtSUMGbLc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:45:00 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-uGx6H3QtM5p3GVkRCp578a5IUTUvOg4v2GUtSUMGbLc="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/14600kf.gc20taf6ot.jpg",
+      "AssetFile": "content/producttypes/cpu/14600kf.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13888"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4CDl6jfv7nBaT33k4hnrJJdcbKBq1ygcdmOQRNrHJmc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:45:15 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gc20taf6ot"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4CDl6jfv7nBaT33k4hnrJJdcbKBq1ygcdmOQRNrHJmc="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/cpu/14600kf.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/14600kf.jpg",
+      "AssetFile": "content/producttypes/cpu/14600kf.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13888"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4CDl6jfv7nBaT33k4hnrJJdcbKBq1ygcdmOQRNrHJmc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:45:15 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4CDl6jfv7nBaT33k4hnrJJdcbKBq1ygcdmOQRNrHJmc="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/5600.6za736n92n.jpg",
+      "AssetFile": "content/producttypes/cpu/5600.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19214"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rmEFN9D0IH7yelh4pASUPdHVCL5sP5JC2Mf6wpDXl2k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:44:50 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6za736n92n"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rmEFN9D0IH7yelh4pASUPdHVCL5sP5JC2Mf6wpDXl2k="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/cpu/5600.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/5600.jpg",
+      "AssetFile": "content/producttypes/cpu/5600.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "19214"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rmEFN9D0IH7yelh4pASUPdHVCL5sP5JC2Mf6wpDXl2k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:44:50 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-rmEFN9D0IH7yelh4pASUPdHVCL5sP5JC2Mf6wpDXl2k="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/7600.9n1f5b5dbr.jpg",
+      "AssetFile": "content/producttypes/cpu/7600.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13808"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"64i0/jNtVLLEYDjhFmxJSrMZ1dF50+ZXW/A3e3DtzbE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:45:04 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "9n1f5b5dbr"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-64i0/jNtVLLEYDjhFmxJSrMZ1dF50+ZXW/A3e3DtzbE="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/cpu/7600.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/7600.jpg",
+      "AssetFile": "content/producttypes/cpu/7600.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13808"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"64i0/jNtVLLEYDjhFmxJSrMZ1dF50+ZXW/A3e3DtzbE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:45:04 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-64i0/jNtVLLEYDjhFmxJSrMZ1dF50+ZXW/A3e3DtzbE="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/7800x3d.e7q16gcroi.jpg",
+      "AssetFile": "content/producttypes/cpu/7800x3d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6sAKyitNqHgtSPid8UTrjhEKy9q6a+lXRB06BUVA4VY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:44:57 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "e7q16gcroi"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-6sAKyitNqHgtSPid8UTrjhEKy9q6a+lXRB06BUVA4VY="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/cpu/7800x3d.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/7800x3d.jpg",
+      "AssetFile": "content/producttypes/cpu/7800x3d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15050"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"6sAKyitNqHgtSPid8UTrjhEKy9q6a+lXRB06BUVA4VY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:44:57 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-6sAKyitNqHgtSPid8UTrjhEKy9q6a+lXRB06BUVA4VY="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/9700x.jpg",
+      "AssetFile": "content/producttypes/cpu/9700x.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13860"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ptutEmeaSSwsodhcNRQf3ohxok9o2TpEZeoOMRJHu9w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:45:11 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ptutEmeaSSwsodhcNRQf3ohxok9o2TpEZeoOMRJHu9w="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/9700x.ytzhopfklz.jpg",
+      "AssetFile": "content/producttypes/cpu/9700x.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13860"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ptutEmeaSSwsodhcNRQf3ohxok9o2TpEZeoOMRJHu9w=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:45:11 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ytzhopfklz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ptutEmeaSSwsodhcNRQf3ohxok9o2TpEZeoOMRJHu9w="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/cpu/9700x.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/9800x3d.jpg",
+      "AssetFile": "content/producttypes/cpu/9800x3d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14316"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vRmrEi2Zk8TezqbKPP4zXGvwndmYst3TFF5+SZztI1Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:44:54 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-vRmrEi2Zk8TezqbKPP4zXGvwndmYst3TFF5+SZztI1Q="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/9800x3d.zsjc7c2jc0.jpg",
+      "AssetFile": "content/producttypes/cpu/9800x3d.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14316"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"vRmrEi2Zk8TezqbKPP4zXGvwndmYst3TFF5+SZztI1Q=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:44:54 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "zsjc7c2jc0"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-vRmrEi2Zk8TezqbKPP4zXGvwndmYst3TFF5+SZztI1Q="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/cpu/9800x3d.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/cpu.2cgqhs33n6.jpg",
+      "AssetFile": "content/producttypes/cpu/cpu.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27644"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MmZHyw+EBJcPSqswGEYGmwSk5UTBlOBnOSoHWxpx28o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 00:43:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2cgqhs33n6"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-MmZHyw+EBJcPSqswGEYGmwSk5UTBlOBnOSoHWxpx28o="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/cpu/cpu.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/cpu/cpu.jpg",
+      "AssetFile": "content/producttypes/cpu/cpu.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "27644"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"MmZHyw+EBJcPSqswGEYGmwSk5UTBlOBnOSoHWxpx28o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 00:43:14 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-MmZHyw+EBJcPSqswGEYGmwSk5UTBlOBnOSoHWxpx28o="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/GPU.5t9iyzn0yp.jpg",
+      "AssetFile": "content/producttypes/gpu/GPU.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "109269"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KUAJOYDfBpNxuv4z10Wa/KezxpRuyawU7R4gEOXSSiA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 00:44:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5t9iyzn0yp"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-KUAJOYDfBpNxuv4z10Wa/KezxpRuyawU7R4gEOXSSiA="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/gpu/GPU.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/GPU.jpg",
+      "AssetFile": "content/producttypes/gpu/GPU.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "109269"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"KUAJOYDfBpNxuv4z10Wa/KezxpRuyawU7R4gEOXSSiA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 00:44:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-KUAJOYDfBpNxuv4z10Wa/KezxpRuyawU7R4gEOXSSiA="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/XFXRX9070XT.jpg",
+      "AssetFile": "content/producttypes/gpu/XFXRX9070XT.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "169403"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4gkcZBtJF6a6G+qaSr4kITDe4fdQ2yTf/ET4Vo8G+FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 03:44:41 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4gkcZBtJF6a6G+qaSr4kITDe4fdQ2yTf/ET4Vo8G+FI="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/XFXRX9070XT.u8apazce5v.jpg",
+      "AssetFile": "content/producttypes/gpu/XFXRX9070XT.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "169403"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4gkcZBtJF6a6G+qaSr4kITDe4fdQ2yTf/ET4Vo8G+FI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 31 Mar 2025 03:44:41 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "u8apazce5v"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4gkcZBtJF6a6G+qaSr4kITDe4fdQ2yTf/ET4Vo8G+FI="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/gpu/XFXRX9070XT.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/asrockrx6600.7hv1gs70kn.jpg",
+      "AssetFile": "content/producttypes/gpu/asrockrx6600.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37790"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"m8U+MYK2ewUoAw0WPr5lHVJqjZFJbqUSKhsYWRSHF8o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:25:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "7hv1gs70kn"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-m8U+MYK2ewUoAw0WPr5lHVJqjZFJbqUSKhsYWRSHF8o="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/gpu/asrockrx6600.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/asrockrx6600.jpg",
+      "AssetFile": "content/producttypes/gpu/asrockrx6600.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "37790"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"m8U+MYK2ewUoAw0WPr5lHVJqjZFJbqUSKhsYWRSHF8o=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:25:27 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-m8U+MYK2ewUoAw0WPr5lHVJqjZFJbqUSKhsYWRSHF8o="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/asrockrx9070.jpg",
+      "AssetFile": "content/producttypes/gpu/asrockrx9070.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "31238"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"glAlUqxL4Q0rpErPfSgCLC2p3kXoBgPBiU1kAnXV0gY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:48 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-glAlUqxL4Q0rpErPfSgCLC2p3kXoBgPBiU1kAnXV0gY="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/asrockrx9070.qun7o1qq8b.jpg",
+      "AssetFile": "content/producttypes/gpu/asrockrx9070.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "31238"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"glAlUqxL4Q0rpErPfSgCLC2p3kXoBgPBiU1kAnXV0gY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:48 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "qun7o1qq8b"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-glAlUqxL4Q0rpErPfSgCLC2p3kXoBgPBiU1kAnXV0gY="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/gpu/asrockrx9070.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/asusrx7600.dmwm2x2un4.jpg",
+      "AssetFile": "content/producttypes/gpu/asusrx7600.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28754"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pVTjy1uWLTZlZmmYS1Z0SeQj67lo4Ehg8qaZ6n0DXR8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:38 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dmwm2x2un4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-pVTjy1uWLTZlZmmYS1Z0SeQj67lo4Ehg8qaZ6n0DXR8="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/gpu/asusrx7600.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/asusrx7600.jpg",
+      "AssetFile": "content/producttypes/gpu/asusrx7600.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28754"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"pVTjy1uWLTZlZmmYS1Z0SeQj67lo4Ehg8qaZ6n0DXR8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:38 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-pVTjy1uWLTZlZmmYS1Z0SeQj67lo4Ehg8qaZ6n0DXR8="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/gainwardrtx5070.dldxmfc9cc.jpg",
+      "AssetFile": "content/producttypes/gpu/gainwardrtx5070.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40800"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"78rDmPt4n+bYjRTK6sJ6pGRXXPaOVIy8KAKXLlV1JiY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:32 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dldxmfc9cc"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-78rDmPt4n+bYjRTK6sJ6pGRXXPaOVIy8KAKXLlV1JiY="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/gpu/gainwardrtx5070.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/gainwardrtx5070.jpg",
+      "AssetFile": "content/producttypes/gpu/gainwardrtx5070.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "40800"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"78rDmPt4n+bYjRTK6sJ6pGRXXPaOVIy8KAKXLlV1JiY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:32 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-78rDmPt4n+bYjRTK6sJ6pGRXXPaOVIy8KAKXLlV1JiY="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/gigabytertx5070ti.3kr886knmv.jpg",
+      "AssetFile": "content/producttypes/gpu/gigabytertx5070ti.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32878"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gx1KZaWulHMF2TTeA1Gq94cBaP5b9GNYG8AynkeUrNo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:35 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "3kr886knmv"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-gx1KZaWulHMF2TTeA1Gq94cBaP5b9GNYG8AynkeUrNo="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/gpu/gigabytertx5070ti.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/gigabytertx5070ti.jpg",
+      "AssetFile": "content/producttypes/gpu/gigabytertx5070ti.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32878"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"gx1KZaWulHMF2TTeA1Gq94cBaP5b9GNYG8AynkeUrNo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:35 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-gx1KZaWulHMF2TTeA1Gq94cBaP5b9GNYG8AynkeUrNo="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/gigabyterx7700xt.jpg",
+      "AssetFile": "content/producttypes/gpu/gigabyterx7700xt.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "35040"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dW81L+Mv+UHpQNvGJc+tbeaxoIsgvOrd8p2H/0R7yC4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:21 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dW81L+Mv+UHpQNvGJc+tbeaxoIsgvOrd8p2H/0R7yC4="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/gigabyterx7700xt.jugtqbvl0q.jpg",
+      "AssetFile": "content/producttypes/gpu/gigabyterx7700xt.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "35040"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dW81L+Mv+UHpQNvGJc+tbeaxoIsgvOrd8p2H/0R7yC4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:21 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "jugtqbvl0q"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dW81L+Mv+UHpQNvGJc+tbeaxoIsgvOrd8p2H/0R7yC4="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/gpu/gigabyterx7700xt.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/intelb580.2fa2bu5ui5.jpg",
+      "AssetFile": "content/producttypes/gpu/intelb580.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21062"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wmsYTGR4ckniQ8a4ID6yHp675ClPRRnSjkkzHUtbP04=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:42 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2fa2bu5ui5"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wmsYTGR4ckniQ8a4ID6yHp675ClPRRnSjkkzHUtbP04="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/gpu/intelb580.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/intelb580.jpg",
+      "AssetFile": "content/producttypes/gpu/intelb580.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "21062"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wmsYTGR4ckniQ8a4ID6yHp675ClPRRnSjkkzHUtbP04=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:42 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wmsYTGR4ckniQ8a4ID6yHp675ClPRRnSjkkzHUtbP04="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/kfa2rtx5080.hkztj4hpu9.jpg",
+      "AssetFile": "content/producttypes/gpu/kfa2rtx5080.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32698"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"r9Oi/9p/oXis0TSrQwpcGst+S3A90S++onwFrNAveCY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:25 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "hkztj4hpu9"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-r9Oi/9p/oXis0TSrQwpcGst+S3A90S++onwFrNAveCY="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/gpu/kfa2rtx5080.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/kfa2rtx5080.jpg",
+      "AssetFile": "content/producttypes/gpu/kfa2rtx5080.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "32698"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"r9Oi/9p/oXis0TSrQwpcGst+S3A90S++onwFrNAveCY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:25 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-r9Oi/9p/oXis0TSrQwpcGst+S3A90S++onwFrNAveCY="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/msirtx5090.jpg",
+      "AssetFile": "content/producttypes/gpu/msirtx5090.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28892"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QMVh6T83JIw+XX7a7C56avCnQ00yrsD/38SCiXtVqrI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:28 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-QMVh6T83JIw+XX7a7C56avCnQ00yrsD/38SCiXtVqrI="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/msirtx5090.k7be9ri695.jpg",
+      "AssetFile": "content/producttypes/gpu/msirtx5090.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28892"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"QMVh6T83JIw+XX7a7C56avCnQ00yrsD/38SCiXtVqrI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:28 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k7be9ri695"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-QMVh6T83JIw+XX7a7C56avCnQ00yrsD/38SCiXtVqrI="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/gpu/msirtx5090.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/msirx.fxdfg9t38d.png",
+      "AssetFile": "content/producttypes/gpu/msirx.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -863,13 +2503,13 @@
         },
         {
           "Name": "label",
-          "Value": "content/msirx.png"
+          "Value": "content/producttypes/gpu/msirx.png"
         }
       ]
     },
     {
-      "Route": "content/msirx.png",
-      "AssetFile": "content/msirx.png",
+      "Route": "content/producttypes/gpu/msirx.png",
+      "AssetFile": "content/producttypes/gpu/msirx.png",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -905,8 +2545,90 @@
       ]
     },
     {
-      "Route": "content/rtx-5090-zotac.jpg",
-      "AssetFile": "content/rtx-5090-zotac.jpg",
+      "Route": "content/producttypes/gpu/powercolorrx9070xt.e1e7cxffa9.jpg",
+      "AssetFile": "content/producttypes/gpu/powercolorrx9070xt.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25698"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0qItwnXzJwZ7bhchPv/scTB/jNRFWOPCCWSbNgd9XSI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:51 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "e1e7cxffa9"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0qItwnXzJwZ7bhchPv/scTB/jNRFWOPCCWSbNgd9XSI="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/gpu/powercolorrx9070xt.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/powercolorrx9070xt.jpg",
+      "AssetFile": "content/producttypes/gpu/powercolorrx9070xt.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "25698"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0qItwnXzJwZ7bhchPv/scTB/jNRFWOPCCWSbNgd9XSI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 19:27:51 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0qItwnXzJwZ7bhchPv/scTB/jNRFWOPCCWSbNgd9XSI="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/gpu/rtx-5090-zotac.jpg",
+      "AssetFile": "content/producttypes/gpu/rtx-5090-zotac.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -942,8 +2664,8 @@
       ]
     },
     {
-      "Route": "content/rtx-5090-zotac.qdgdd2h4x3.jpg",
-      "AssetFile": "content/rtx-5090-zotac.jpg",
+      "Route": "content/producttypes/gpu/rtx-5090-zotac.qdgdd2h4x3.jpg",
+      "AssetFile": "content/producttypes/gpu/rtx-5090-zotac.jpg",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -982,7 +2704,499 @@
         },
         {
           "Name": "label",
-          "Value": "content/rtx-5090-zotac.jpg"
+          "Value": "content/producttypes/gpu/rtx-5090-zotac.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/headphone/headphone.j73ygh02y1.jpg",
+      "AssetFile": "content/producttypes/headphone/headphone.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "112330"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v7h5pwzXtdM/0dDT4P/BKVJFrOPTTcWXVgQ7TEMe4VM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 00:46:28 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "j73ygh02y1"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-v7h5pwzXtdM/0dDT4P/BKVJFrOPTTcWXVgQ7TEMe4VM="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/headphone/headphone.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/headphone/headphone.jpg",
+      "AssetFile": "content/producttypes/headphone/headphone.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "112330"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"v7h5pwzXtdM/0dDT4P/BKVJFrOPTTcWXVgQ7TEMe4VM=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 00:46:28 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-v7h5pwzXtdM/0dDT4P/BKVJFrOPTTcWXVgQ7TEMe4VM="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/keyboard/keyboard.gjjpvtn0j8.jpg",
+      "AssetFile": "content/producttypes/keyboard/keyboard.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "90250"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LLLOgfqZgFIQ6pdO3Exa6DDKQkDq7jfQ75twS3L07BQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 00:46:01 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "gjjpvtn0j8"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-LLLOgfqZgFIQ6pdO3Exa6DDKQkDq7jfQ75twS3L07BQ="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/keyboard/keyboard.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/keyboard/keyboard.jpg",
+      "AssetFile": "content/producttypes/keyboard/keyboard.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "90250"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LLLOgfqZgFIQ6pdO3Exa6DDKQkDq7jfQ75twS3L07BQ=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 00:46:01 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LLLOgfqZgFIQ6pdO3Exa6DDKQkDq7jfQ75twS3L07BQ="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/mice/mice.jpg",
+      "AssetFile": "content/producttypes/mice/mice.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28460"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XuvjfPKRlWpQQ72Y0pUfEJWdOoOxrIXmgZnDo7TNIfE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 00:46:44 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XuvjfPKRlWpQQ72Y0pUfEJWdOoOxrIXmgZnDo7TNIfE="
+        }
+      ]
+    },
+    {
+      "Route": "content/producttypes/mice/mice.mmbambvvns.jpg",
+      "AssetFile": "content/producttypes/mice/mice.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "28460"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XuvjfPKRlWpQQ72Y0pUfEJWdOoOxrIXmgZnDo7TNIfE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 00:46:44 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mmbambvvns"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XuvjfPKRlWpQQ72Y0pUfEJWdOoOxrIXmgZnDo7TNIfE="
+        },
+        {
+          "Name": "label",
+          "Value": "content/producttypes/mice/mice.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/topicalities/Liquid_Freezer_III_360_A-RGB_Black.2muts3sxc2.jpg",
+      "AssetFile": "content/topicalities/Liquid_Freezer_III_360_A-RGB_Black.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2515533"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xjdN/gSQicjWHwTi8A/zIBa/5e9SRLZXcjRJdGnsHbE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 29 Mar 2025 08:51:07 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "2muts3sxc2"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-xjdN/gSQicjWHwTi8A/zIBa/5e9SRLZXcjRJdGnsHbE="
+        },
+        {
+          "Name": "label",
+          "Value": "content/topicalities/Liquid_Freezer_III_360_A-RGB_Black.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/topicalities/Liquid_Freezer_III_360_A-RGB_Black.jpg",
+      "AssetFile": "content/topicalities/Liquid_Freezer_III_360_A-RGB_Black.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2515533"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"xjdN/gSQicjWHwTi8A/zIBa/5e9SRLZXcjRJdGnsHbE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 29 Mar 2025 08:51:07 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-xjdN/gSQicjWHwTi8A/zIBa/5e9SRLZXcjRJdGnsHbE="
+        }
+      ]
+    },
+    {
+      "Route": "content/topicalities/agentic-ai-reasoning-models.jpg",
+      "AssetFile": "content/topicalities/agentic-ai-reasoning-models.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "394982"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aPRIE1KzF8YegDY8b1yJv1K+fA3pR5BM4SVsBZ/ybkA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 22:39:21 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-aPRIE1KzF8YegDY8b1yJv1K+fA3pR5BM4SVsBZ/ybkA="
+        }
+      ]
+    },
+    {
+      "Route": "content/topicalities/agentic-ai-reasoning-models.osuaq8k24t.jpg",
+      "AssetFile": "content/topicalities/agentic-ai-reasoning-models.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "394982"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"aPRIE1KzF8YegDY8b1yJv1K+fA3pR5BM4SVsBZ/ybkA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Mon, 02 Jun 2025 22:39:21 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "osuaq8k24t"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-aPRIE1KzF8YegDY8b1yJv1K+fA3pR5BM4SVsBZ/ybkA="
+        },
+        {
+          "Name": "label",
+          "Value": "content/topicalities/agentic-ai-reasoning-models.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/topicalities/cotoserwomechanizm.dhjq6ljb15.jpg",
+      "AssetFile": "content/topicalities/cotoserwomechanizm.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "74016"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3/BDyPg0cLu63hfmT61dvdWxWWSrPJ4a+em6IgV8ncc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 00:33:05 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "dhjq6ljb15"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3/BDyPg0cLu63hfmT61dvdWxWWSrPJ4a+em6IgV8ncc="
+        },
+        {
+          "Name": "label",
+          "Value": "content/topicalities/cotoserwomechanizm.jpg"
+        }
+      ]
+    },
+    {
+      "Route": "content/topicalities/cotoserwomechanizm.jpg",
+      "AssetFile": "content/topicalities/cotoserwomechanizm.jpg",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "74016"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/jpeg"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3/BDyPg0cLu63hfmT61dvdWxWWSrPJ4a+em6IgV8ncc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Tue, 03 Jun 2025 00:33:05 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3/BDyPg0cLu63hfmT61dvdWxWWSrPJ4a+em6IgV8ncc="
         }
       ]
     },

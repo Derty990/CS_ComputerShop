@@ -1,6 +1,8 @@
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Data\bin\Debug\net8.0\Firma.Data.deps.json
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Data\bin\Debug\net8.0\Firma.Data.runtimeconfig.json
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Data\bin\Debug\net8.0\Firma.Data.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Data\bin\Debug\net8.0\Firma.Data.pdb
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Data\obj\Debug\net8.0\Firma.Data.csproj.AssemblyReference.cache
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Data\obj\Debug\net8.0\Firma.Data.GeneratedMSBuildEditorConfig.editorconfig
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Data\obj\Debug\net8.0\Firma.Data.AssemblyInfoInputs.cache
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Data\obj\Debug\net8.0\Firma.Data.AssemblyInfo.cs
@@ -9,7 +11,5 @@ D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputer
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Data\obj\Debug\net8.0\Firma.Data.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Data\obj\Debug\net8.0\refint\Firma.Data.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Data\obj\Debug\net8.0\Firma.Data.pdb
-D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Data\obj\Debug\net8.0\ref\Firma.Data.dll
-D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Data\obj\Debug\net8.0\Firma.Data.csproj.AssemblyReference.cache
-D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Data\bin\Debug\net8.0\Firma.Data.runtimeconfig.json
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Data\obj\Debug\net8.0\Firma.Data.genruntimeconfig.cache
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Data\obj\Debug\net8.0\ref\Firma.Data.dll

@@ -7,7 +7,6 @@ namespace Firma.Data.Data.Customers
     {
         [Key]
         public int IdOrder { get; set; }
-
         
         [Required(ErrorMessage ="Error in IdUser field, Order table")]
         public int IdUser { get; set; }
@@ -24,7 +23,6 @@ namespace Firma.Data.Data.Customers
         public OrderStatus Status { get; set; } = OrderStatus.Pending;
 
         public ICollection<OrderItem> OrderItems { get; set; } = new List<OrderItem>();
-
        
     }
 

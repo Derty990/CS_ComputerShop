@@ -27,7 +27,7 @@
                     <thead class="table-light">
                         <tr>
                             <th>
-                                @Html.DisplayNameFor(model => model.User.Name) @* Lub User.Email, zależnie co preferujesz *@
+                                @Html.DisplayNameFor(model => model.User.Name) @* Lub User.Email *@
                             </th>
                             <th>
                                 @Html.DisplayNameFor(model => model.Product.Name) @* Lub Product.Code *@
@@ -53,7 +53,7 @@
                                 </td>
                                 <td>
                                     <div class="btn-group btn-group-sm">
-                                        @* Jeśli Details nie jest potrzebne dla Cart, możesz usunąć ten link/przycisk *@
+                                        @* Jeśli Details nie jest potrzebne dla Cart, można usunąć ten link/przycisk *@
                                         @*
                                         <a asp-action="Details" asp-route-id="@item.IdCart" class="btn btn-info" title="Szczegóły">
                                             <i class="bi bi-eye"></i>

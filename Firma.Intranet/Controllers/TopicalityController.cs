@@ -55,7 +55,7 @@ namespace Firma.Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdTopicality,TitleLink,Title,Contents,Position")] Topicality topicality)
+        public async Task<IActionResult> Create([Bind("IdTopicality,TitleLink,Title,Contents,Position,PhotoUrl")] Topicality topicality)
         {
             if (ModelState.IsValid)
             {
@@ -87,7 +87,7 @@ namespace Firma.Intranet.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdTopicality,TitleLink,Title,Contents,Position")] Topicality topicality)
+        public async Task<IActionResult> Edit(int id, [Bind("IdTopicality,TitleLink,Title,Contents,Position,PhotoUrl")] Topicality topicality)
         {
             if (id != topicality.IdTopicality)
             {

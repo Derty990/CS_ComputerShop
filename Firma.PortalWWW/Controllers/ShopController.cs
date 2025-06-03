@@ -1,147 +1,155 @@
-﻿using Firma.PortalWWW.Models.Shop;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Firma.Data.Data; // Dostęp do FirmaContext
+using Firma.Data.Data.Shop; // Dostęp do Product, ProductType
+using Firma.PortalWWW.Models.Shop; // Dla ProductViewModel
+using System.Linq;
+using System.Threading.Tasks;
+using System.Collections.Generic; // Dla List
 
 namespace Firma.PortalWWW.Controllers
 {
     public class ShopController : Controller
     {
-        // GET: ShopController
-        public ActionResult Index()
+        private readonly FirmaContext _context;
+
+        public ShopController(FirmaContext context)
         {
-            // Tu będze pobierać produkty z bazy danych
-            // Na razie tworze przykładowe dane
-            var products = GetSampleProducts();
-            return View(products);
+            _context = context;
         }
 
-        public IActionResult Product(int id)
+        // GET: /Shop lub /Shop/Index?productTypeId=X&sortBy=Y&searchString=Z
+        public async Task<IActionResult> Index(int? productTypeId, string sortBy = "nameAsc", string? searchString = null)
         {
-            // Tu będze pobierać konkretny produkt z bazy danych
-            // Na razie zwracam przykładowy produkt
-            var product = GetSampleProducts().FirstOrDefault(p => p.Id == id);
-            if (product == null)
+            // Pobieranie wszystkich typów produktów do wyświetlenia w menu/filtrach
+            ViewBag.ProductTypes = await _context.ProductType
+                                            .OrderBy(pt => pt.Name)
+                                            .ToListAsync();
+
+            // Przekazanie aktualnych wartości filtrów i sortowania do widoku, aby można je było utrzymać w UI
+            ViewBag.CurrentProductTypeId = productTypeId;
+            ViewBag.CurrentSort = sortBy;
+            ViewBag.CurrentSearch = searchString;
+
+            // Tworzenie bazowego zapytania dla produktów
+            IQueryable<Product> productsQuery = _context.Product
+                                                    .Include(p => p.ProductType); // Dołączenie danych typu produktu (kategorii)
+
+            // Filtrowanie po nazwie lub opisie produktu
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                productsQuery = productsQuery.Where(p =>
+                    p.Name.Contains(searchString) ||
+                    (p.Description != null && p.Description.Contains(searchString))
+                );
+            }
+
+            // Filtrowanie po typie produktu (kategorii)
+            if (productTypeId.HasValue && productTypeId > 0)
+            {
+                productsQuery = productsQuery.Where(p => p.IdProductType == productTypeId.Value);
+                var selectedProductType = await _context.ProductType.FindAsync(productTypeId.Value);
+                ViewBag.SelectedProductTypeName = selectedProductType?.Name; // Nazwa wybranej kategorii do wyświetlenia
+            }
+
+            // Sortowanie produktów
+            switch (sortBy)
+            {
+                case "priceAsc":
+                    productsQuery = productsQuery.OrderBy(p => p.Price);
+                    break;
+                case "priceDesc":
+                    productsQuery = productsQuery.OrderByDescending(p => p.Price);
+                    break;
+                case "nameDesc":
+                    productsQuery = productsQuery.OrderByDescending(p => p.Name);
+                    break;
+                case "nameAsc":
+                default:
+                    productsQuery = productsQuery.OrderBy(p => p.Name);
+                    break;
+            }
+
+            var productsFromDb = await productsQuery.ToListAsync();
+
+            // Mapowanie encji Product z bazy na ProductViewModel
+            // Upewnij się, że Twój ProductViewModel ma wszystkie potrzebne pola.
+            var productViewModels = productsFromDb.Select(p => new ProductViewModel
+            {
+                Id = p.IdProduct,
+                Name = p.Name,
+                Price = p.Price,
+              
+                OldPrice = null,
+                Description = p.Description ?? string.Empty, 
+                
+                ShortDescription = (p.Description != null && p.Description.Length > 100 ? p.Description.Substring(0, 100) + "..." : p.Description) ?? string.Empty,
+                ImageUrl = p.PhotoUrl, 
+                Category = p.ProductType?.Name ?? "Brak kategorii",
+                CategoryId = p.IdProductType,
+
+               
+                Rating = 0,        
+                Reviews = 0,       
+                IsOnSale = false,   
+                IsInStock = true   
+            }).ToList();
+
+            // Ustawienie tytułu strony
+            if (productTypeId.HasValue && !string.IsNullOrEmpty(ViewBag.SelectedProductTypeName))
+            {
+                ViewData["Title"] = $"Sklep - {ViewBag.SelectedProductTypeName}";
+            }
+            else if (!string.IsNullOrEmpty(searchString))
+            {
+                ViewData["Title"] = $"Wyniki wyszukiwania dla: \"{searchString}\"";
+            }
+            else
+            {
+                ViewData["Title"] = "Sklep - Wszystkie produkty";
+            }
+
+            return View(productViewModels); // Przekazujemy listę ProductViewModel do widoku
+        }
+
+        // GET: /Shop/Product/5
+        public async Task<IActionResult> Product(int? id)
+        {
+            if (id == null)
+            {
+                // Można też przekierować do Index, jeśli ID nie jest podane
+                // return RedirectToAction(nameof(Index)); 
+                return NotFound();
+            }
+
+            var productFromDb = await _context.Product
+                                    .Include(p => p.ProductType) // Dołączenie informacji o kategorii
+                                    .FirstOrDefaultAsync(p => p.IdProduct == id);
+
+            if (productFromDb == null)
             {
                 return NotFound();
             }
-            return View(product);
-        }
 
-        private List<ProductViewModel> GetSampleProducts()
-        {
-            var products = new List<ProductViewModel>();
-
-            var categories = new[] { "Komputery", "Podzespoły", "Peryferia" };
-
-            var productNames = new[]
+            // Mapowanie encji Product na ProductViewModel dla strony szczegółów
+            var productViewModel = new ProductViewModel
             {
-                "Laptop Gamingowy XTreme", "Komputer StacjoX Pro", "Procesor UltraCore i9",
-                "Karta graficzna RTX 4090", "Monitor 32\" UltraWide", "Klawiatura mechaniczna RGB",
-                "Mysz gamingowa bezprzewodowa", "Słuchawki z mikrofonem", "Obudowa komputerowa ATX",
-                "Zasilacz modularny 850W", "Płyta główna Z790", "Pamięć RAM 32GB DDR5"
+                Id = productFromDb.IdProduct,
+                Name = productFromDb.Name,
+                Price = productFromDb.Price,
+                Description = productFromDb.Description ?? string.Empty,
+                ShortDescription = (productFromDb.Description != null && productFromDb.Description.Length > 100 ? productFromDb.Description.Substring(0, 100) + "..." : productFromDb.Description) ?? string.Empty,
+                ImageUrl = productFromDb.PhotoUrl,
+                Category = productFromDb.ProductType?.Name ?? "Brak kategorii",
+                OldPrice = null,      
+                Rating = 0,        
+                Reviews = 0,        
+                IsOnSale = false,   
+                IsInStock = true   
             };
 
-            Random rand = new Random();
-
-            for(int i = 1; i<= 12; i++)
-            {
-                var price = rand.Next(150, 5000);
-                var isOnSale = rand.Next(0, 2) == 1;
-                var oldPrice = isOnSale ? price + rand.Next(50, 500) : (decimal?) null;
-
-                products.Add(new ProductViewModel
-                {
-                    Id = i,
-                    Name = productNames[i - 1],
-                    Price = price,
-                    OldPrice = oldPrice,
-                    Description = "Szczegółowy opis produktu. Ten tekst jest dłuższy i zawiera więcej informacji o produkcie.",
-                    ShortDescription = "Krótki opis produktu",
-                    ImageUrl = "https://placehold.co/600x400/000080/FFFFFF/png",
-                    Category = categories[i % categories.Length],
-                    Rating = Math.Round(3 + rand.NextDouble() * 2, 1),
-                    Reviews = rand.Next(5, 100),
-                    IsOnSale = isOnSale,
-                    IsInStock = rand.Next(0, 10) > 0
-
-
-
-                });
-
-
-            }
-
-
-            return products;
-
-        }
-
-        // GET: ShopController/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
-        }
-
-        // GET: ShopController/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
-        // POST: ShopController/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Create(IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: ShopController/Edit/5
-        public ActionResult Edit(int id)
-        {
-            return View();
-        }
-
-        // POST: ShopController/Edit/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: ShopController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: ShopController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            ViewData["Title"] = productViewModel.Name; // Ustawienie tytułu strony na nazwę produktu
+            return View(productViewModel); // Przekazujemy ProductViewModel do widoku
         }
     }
 }

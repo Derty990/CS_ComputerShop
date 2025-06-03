@@ -1,0 +1,11 @@
+﻿@model IEnumerable<Firma.Data.Data.CMS.Page>
+
+@if (Model != null)
+{
+    foreach (var menuItem in Model.OrderBy(p => p.Position))
+    {
+        <li class="nav-item">
+            <a class="nav-link text-dark" asp-controller="Home" asp-action="Index" asp-route-id="@menuItem.IdPage">@menuItem.TitleLink</a>
+        </li>
+    }
+}

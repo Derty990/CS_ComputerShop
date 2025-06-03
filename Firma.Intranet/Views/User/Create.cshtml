@@ -1,5 +1,5 @@
 ﻿@model Firma.Data.Data.Customers.User
-@using Firma.Data.Data.Customers @* Dodaj using dla enuma, jeśli nie jest globalnie dostępny *@
+@using Firma.Data.Data.Customers @* using dla enuma *@
 
 @{
     ViewData["Title"] = "Dodaj nowego użytkownika";
@@ -57,8 +57,8 @@
                 <span asp-validation-for="HashedPassword" class="text-danger"></span>
             </div>
 
-            @* Pole RegistrationDate ma wartość domyślną w modelu, więc można je pominąć w formularzu tworzenia.
-               Zostanie automatycznie ustawione przez `DateTime.UtcNow` przy tworzeniu obiektu User.
+            @* Pole RegistrationDate ma wartość domyślną w modelu, więc można je pominąć w formularzu tworzenia
+               Zostanie automatycznie ustawione przez `DateTime.UtcNow` przy tworzeniu obiektu User
             *@
 
             <div class="mt-4">

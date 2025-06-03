@@ -12,7 +12,7 @@ namespace Firma.Data.Migrations
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.CreateTable(
+           /* migrationBuilder.CreateTable(
                 name: "Page",
                 columns: table => new
                 {
@@ -204,7 +204,7 @@ namespace Firma.Data.Migrations
             migrationBuilder.CreateIndex(
                 name: "IX_Product_IdProductType",
                 table: "Product",
-                column: "IdProductType");
+                column: "IdProductType");*/
         }
 
         /// <inheritdoc />

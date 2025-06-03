@@ -1,9 +1,9 @@
-﻿@model Firma.Data.Data.Customers.Order
-@using Firma.Data.Data.Customers // Dla OrderStatus
+﻿    @model Firma.Data.Data.Customers.Order
+@using Firma.Data.Data.Customers @* Dla OrderStatus*@
 
 @{
     ViewData["Title"] = "Edytuj zamówienie";
-    // Ładujemy OrderItems i Product dla prawej kolumny (jeśli kontroler je przekazał)
+    // Ładuje OrderItems i Product dla prawej kolumny (jeśli kontroler je przekazał)
     var orderItems = Model.OrderItems ?? new List<OrderItem>();
     decimal totalValue = orderItems.Sum(oi => oi.Quantity * oi.UnitPrice);
 }
@@ -14,14 +14,13 @@
 <hr />
 <div class="row">
     <div class="col-md-7">
-        @* Zmieniona szerokość kolumn *@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="IdOrder" />
 
             <div class="mb-3">
                 <label asp-for="IdUser" class="form-label">Użytkownik</label>
-                @* Zrobione readonly - zwykle nie zmieniamy klienta dla istniejącego zamówienia *@
+                @* Zrobione readonly - zwykle nie zmieniam się klienta dla istniejącego zamówienia *@
                 <select asp-for="IdUser" class="form-select" asp-items="ViewBag.IdUser" disabled>
                     @* Dodane disabled *@
                 </select>
@@ -55,7 +54,6 @@
         </form>
     </div>
     <div class="col-md-5">
-        @* Zmieniona szerokość kolumn *@
         <h5>Pozycje w zamówieniu:</h5>
         @if (!orderItems.Any())
         {
