@@ -4,12 +4,12 @@ namespace Firma.PortalWWW.Models.Account
 {
     public class LoginViewModel
     {
-        [Required(ErrorMessage = "Adres email jest wymagany")]
-        [EmailAddress(ErrorMessage = "Nieprawidłowy format adresu email")]
-        [Display(Name = "Email")]
+        [Required(ErrorMessage = "Adres email jest wymagany.")]
+        [EmailAddress(ErrorMessage = "Nieprawidłowy format adresu email.")]
+        [Display(Name = "Adres email")]
         public required string Email { get; set; }
 
-        [Required(ErrorMessage = "Hasło jest wymagane")]
+        [Required(ErrorMessage = "Hasło jest wymagane.")]
         [DataType(DataType.Password)]
         [Display(Name = "Hasło")]
         public required string Password { get; set; }

@@ -1,11 +1,89 @@
-﻿using Firma.PortalWWW.Models.Account;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Firma.Data.Data; 
+using Firma.Data.Data.Customers;
+using Firma.PortalWWW.Models.Account; 
+using System.Threading.Tasks;
+using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using System.Security.Claims; 
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies; 
+using Microsoft.AspNetCore.Authorization;
+using Firma.PortalWWW.Interfaces;
+using Firma.PortalWWW.Services;
+// Do hashowania haseł użyć biblioteki takiej jak BCrypt.Net-Next
+// instalacja przez NuGet: Install-Package BCrypt.Net-Next
+// Lub można użyć wbudowanych mechanizmów ASP.NET Core Identity
 
 namespace Firma.PortalWWW.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly FirmaContext _context;
+        private readonly ICartService _cartService;
+        private readonly ILogger<AccountController> _logger;
+
+        public AccountController(FirmaContext context, ICartService cartService, ILogger<AccountController> logger)
+        {
+            _context = context;
+            _cartService = cartService;
+            _logger = logger;
+        }
+
+        // GET: /Account/Register
+        [HttpGet]
+        public IActionResult Register(string? returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            return View();
+        }
+
+        // POST: /Account/Register
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Register(RegisterViewModel model, string? returnUrl = null)
+        {
+            ViewData["ReturnUrl"] = returnUrl;
+            if (ModelState.IsValid)
+            {
+                // Sprawdź, czy użytkownik o takim emailu już nie istnieje
+                var existingUser = await _context.User.FirstOrDefaultAsync(u => u.Email == model.Email);
+                if (existingUser != null)
+                {
+                    ModelState.AddModelError(string.Empty, "Użytkownik o podanym adresie email już istnieje.");
+                    return View(model);
+                }
+
+                var user = new User
+                {
+                    Name = model.Name,
+                    Email = model.Email,
+                    Phone = model.Phone,
+                    // Haszowanie hasła - BARDZO WAŻNE!
+                    HashedPassword = BCrypt.Net.BCrypt.HashPassword(model.Password),
+                    RegistrationDate = DateTime.UtcNow,
+                    Role = UserRole.User // Domyślnie każdy nowy użytkownik to 'User'
+                };
+
+                _context.User.Add(user);
+                await _context.SaveChangesAsync();
+
+                _logger?.LogInformation($"Użytkownik {user.Email} został zarejestrowany.");
+
+                // Opcjonalnie: automatyczne logowanie po rejestracji
+                // await SignInUser(user); 
+                // return RedirectToLocal(returnUrl);
+
+                // Przekierowanie do strony logowania z komunikatem o sukcesie
+                TempData["SuccessMessage"] = "Rejestracja zakończona pomyślnie. Możesz się teraz zalogować.";
+                return RedirectToAction(nameof(Login));
+            }
+            // Jeśli coś poszło nie tak, wyświetl formularz ponownie
+            return View(model);
+        }
+
         // GET: /Account/Login
+        [HttpGet]
         public IActionResult Login(string? returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
@@ -15,43 +93,85 @@ namespace Firma.PortalWWW.Controllers
         // POST: /Account/Login
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Login(LoginViewModel model, string? returnUrl = null)
+        public async Task<IActionResult> Login(LoginViewModel model, string? returnUrl = null)
         {
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                // Tutaj będzie logika logowania użytkownika
-                // Na razie tylko przekierowanie na stronę główną
-                return RedirectToAction("Index", "Home");
+                var user = await _context.User.FirstOrDefaultAsync(u => u.Email == model.Email);
+
+                // Sprawdź, czy użytkownik istnieje i czy hasło jest poprawne
+                if (user != null && BCrypt.Net.BCrypt.Verify(model.Password, user.HashedPassword))
+                {
+                    await SignInUser(user, model.RememberMe); // Metoda pomocnicza do logowania
+
+                    await _cartService.MigrateCartAsync(user.IdUser); // Migracja koszyka z sesji do bazy
+
+                    _logger?.LogInformation($"Użytkownik {user.Email} zalogował się.");
+                    return RedirectToLocal(returnUrl);
+                }
+                ModelState.AddModelError(string.Empty, "Nieprawidłowa próba logowania. Sprawdź email i hasło.");
             }
+            // Jeśli coś poszło nie tak, wyświetl formularz ponownie
             return View(model);
         }
 
-        // GET: /Account/Register
-        public IActionResult Register()
+        // Metoda pomocnicza do logowania użytkownika (tworzenia ciasteczka)
+        private async Task SignInUser(User user, bool isPersistent = false)
         {
-            return View();
+            var claims = new List<Claim>
+            {
+                new Claim(ClaimTypes.NameIdentifier, user.IdUser.ToString()),
+                new Claim(ClaimTypes.Name, user.Name),
+                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Role, user.Role.ToString()) // Dodaje rolę użytkownika
+                // Można dodać więcej claims, jeśli trzeba
+            };
+
+            var claimsIdentity = new ClaimsIdentity(
+                claims, CookieAuthenticationDefaults.AuthenticationScheme);
+
+            var authProperties = new AuthenticationProperties
+            {
+                IsPersistent = isPersistent, // Jeśli "RememberMe" jest zaznaczone, ciasteczko będzie trwałe
+                // Można ustawić inne właściwości, np. czas wygaśnięcia
+                //ExpiresUtc = DateTimeOffset.UtcNow.AddMinutes(20) 
+            };
+
+            await HttpContext.SignInAsync(
+                CookieAuthenticationDefaults.AuthenticationScheme,
+                new ClaimsPrincipal(claimsIdentity),
+                authProperties);
         }
 
-        // POST: /Account/Register
+        // POST: /Account/Logout
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Register(RegisterViewModel model)
+        // [Authorize] // Upewnij się, że tylko zalogowani użytkownicy mogą się wylogować
+        public async Task<IActionResult> Logout()
         {
-            if (ModelState.IsValid)
-            {
-                // Tutaj będzie logika rejestracji użytkownika
-                // Na razie tylko przekierowanie na stronę logowania
-                return RedirectToAction(nameof(Login));
-            }
-            return View(model);
+            await HttpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+            _logger?.LogInformation("Użytkownik wylogował się.");
+            return RedirectToAction(nameof(HomeController.Index), "Home");
         }
 
-        // GET: /Account/Logout
-        public IActionResult Logout()
+        // Metoda pomocnicza do bezpiecznego przekierowania
+        private IActionResult RedirectToLocal(string? returnUrl)
         {
-            // Tutaj będzie logika wylogowania użytkownika
-            return RedirectToAction("Index", "Home");
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+            else
+            {
+                return RedirectToAction(nameof(HomeController.Index), "Home");
+            }
+        }
+
+        // Można dodać akcję AccessDenied, jeśli używa się autoryzacji opartej na rolach
+        public IActionResult AccessDenied()
+        {
+            return View();
         }
     }
 }

@@ -4,9 +4,8 @@
     ViewData["Title"] = "Edytuj kategorię";
 }
 
-<h1>@ViewData["Title"]</h1>
 
-<h4>Kategoria Produktu: @Model.Name</h4> @* Można dodać nazwę edytowanej kategorii dla kontekstu *@
+<h4>Kategoria Produktu: @Model.Name</h4> 
 <hr />
 <div class="row">
     <div class="col-md-6"> 
@@ -31,6 +30,19 @@
                 <input asp-for="PhotoUrl" class="form-control" />
                 <span asp-validation-for="PhotoUrl" class="text-danger"></span>
             </div>
+
+            <div class="form-group form-check mb-3">
+                <input class="form-check-input" asp-for="IsFeaturedOnHomepage" />
+                <label class="form-check-label" asp-for="IsFeaturedOnHomepage">@Html.DisplayNameFor(model => model.IsFeaturedOnHomepage)</label>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="DisplayOrderHomepage" class="control-label"></label>
+                <input asp-for="DisplayOrderHomepage" class="form-control" type="number" />
+                <span asp-validation-for="DisplayOrderHomepage" class="text-danger"></span>
+                <small class="form-text text-muted">Wprowadź liczbę, aby ustalić kolejność (np. 1, 2, 3...). Niższa liczba = wyżej na liście. Pozostaw puste, jeśli kolejność nie jest istotna lub aby usunąć z polecanych na stronie głównej (jeśli `IsFeaturedOnHomepage` jest odznaczone).</small>
+            </div>
+
             
             <div class="mt-4">
                 <button type="submit" class="btn btn-primary">

@@ -1,0 +1,113 @@
+﻿@* Używamy modelu widoku, który zdefiniowaliśmy wcześniej *@
+@model List<Firma.PortalWWW.Models.Shop.CartItemViewModel>
+@{
+    ViewData["Title"] = "Twój koszyk";
+    // Suma jest teraz przekazywana przez ViewBag z kontrolera, aby uniknąć logiki w widoku
+    decimal cartTotal = ViewBag.CartTotal ?? 0m;
+}
+
+<div class="container mt-5 mb-5">
+    <h1 class="mb-4">@ViewData["Title"]</h1>
+
+    @* Wyświetlanie komunikatów o akcjach w koszyku *@
+    @if (TempData["CartSuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["CartSuccessMessage"]</div>
+    }
+    @if (TempData["CartErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["CartErrorMessage"]</div>
+    }
+    @if (TempData["CartUpdateMessage"] != null)
+    {
+        <div class="alert alert-info">@TempData["CartUpdateMessage"]</div>
+    }
+
+    @if (Model != null && Model.Any())
+    {
+        <div class="table-responsive">
+            <table class="table table-hover align-middle">
+                <thead class="table-light">
+                    <tr>
+                        <th style="width: 10%;">Obrazek</th>
+                        <th style="width: 35%;">Produkt</th>
+                        <th class="text-center" style="width: 20%;">Ilość</th>
+                        <th class="text-end" style="width: 10%;">Cena</th>
+                        <th class="text-end" style="width: 15%;">Końcowa cena</th>
+                        <th class="text-center" style="width: 10%;">Akcje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <a asp-controller="Shop" asp-action="Product" asp-route-id="@item.ProductId">
+                                    <img src="@(string.IsNullOrEmpty(item.ProductPhotoUrl) ? Url.Content("~/content/placeholder-product-sm.png") : Url.Content("~" + item.ProductPhotoUrl))"
+                                         alt="@item.ProductName" class="img-fluid rounded" style="max-height: 75px; max-width: 75px; object-fit: contain;" />
+                                </a>
+                            </td>
+                            <td>
+                                <a asp-controller="Shop" asp-action="Product" asp-route-id="@item.ProductId" class="text-decoration-none text-dark fw-bold">@item.ProductName</a>
+                            </td>
+                            <td class="text-center">
+                                @* Formularz do aktualizacji ilości *@
+                                <form asp-controller="Cart" asp-action="UpdateQuantity" method="post" class="d-flex justify-content-center align-items-center">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="productId" value="@item.ProductId" />
+                                    <input type="number" name="quantity" class="form-control form-control-sm text-center" value="@item.Quantity" min="1" style="width: 60px;" />
+                                    <button type="submit" class="btn btn-sm btn-outline-secondary ms-2" title="Update quantity">
+                                        <i class="bi bi-arrow-repeat"></i>
+                                    </button>
+                                </form>
+                            </td>
+                            <td class="text-end">@item.UnitPrice.ToString("C")</td>
+                            <td class="text-end fw-bold">@item.TotalPrice.ToString("C")</td>
+                            <td class="text-center">
+                                @* Formularz do usunięcia pozycji *@
+                                <form asp-controller="Cart" asp-action="RemoveItem" method="post">
+                                    @Html.AntiForgeryToken()
+                                    <input type="hidden" name="productId" value="@item.ProductId" />
+                                    <button type="submit" class="btn btn-sm btn-outline-danger" title="Remove item">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" class="text-end fw-bold fs-5 border-0">Łącznie:</td>
+                        <td colspan="2" class="text-end fw-bold fs-5 border-0">@cartTotal.ToString("C")</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <div class="row mt-4">
+            <div class="col-md-6 mb-3 order-md-2">
+                <a asp-controller="Checkout" asp-action="Index" class="btn btn-primary w-100">
+                    @* Przycisk do kasy/zamówienia *@
+                    Podsumowanie <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="col-md-6 mb-3 order-md-1">
+                <a asp-controller="Shop" asp-action="Index" class="btn btn-outline-secondary w-100">
+                    <i class="bi bi-arrow-left"></i> Kontynuuj zakupy
+                </a>
+            </div>
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-info text-center" role="alert">
+            <h4 class="alert-heading">Twój koszyk jest pusty!</h4>
+            <p>Wygląda na to, że jeszcze nic nie dodałeś do swojego koszyka.</p>
+            <hr>
+            <p class="mb-0">
+                <a asp-controller="Shop" asp-action="Index" class="btn btn-primary">Do sklepu</a>
+            </p>
+        </div>
+    }
+</div>

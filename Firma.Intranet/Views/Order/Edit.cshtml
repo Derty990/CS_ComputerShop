@@ -8,7 +8,6 @@
     decimal totalValue = orderItems.Sum(oi => oi.Quantity * oi.UnitPrice);
 }
 
-<h1>@ViewData["Title"]</h1>
 
 <h4>Zamówienie #@Model.IdOrder dla @Model.User?.Name</h4>
 <hr />
@@ -20,7 +19,7 @@
 
             <div class="mb-3">
                 <label asp-for="IdUser" class="form-label">Użytkownik</label>
-                @* Zrobione readonly - zwykle nie zmieniam się klienta dla istniejącego zamówienia *@
+                @* Zrobione readonly - zwykle nie zmienia się klienta dla istniejącego zamówienia *@
                 <select asp-for="IdUser" class="form-select" asp-items="ViewBag.IdUser" disabled>
                     @* Dodane disabled *@
                 </select>

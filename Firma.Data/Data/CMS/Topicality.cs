@@ -26,7 +26,6 @@ namespace Firma.Data.Data.CMS
         [Display(Name = "Topicality position")]
         public int Position { get; set; }
 
-        // NOWE POLE
         [Display(Name = "URL zdjęcia")]
         [MaxLength(255)] // Przykładowa maksymalna długość URL
         public string? PhotoUrl { get; set; } // Może być null, jeśli aktualność nie ma zdjęcia

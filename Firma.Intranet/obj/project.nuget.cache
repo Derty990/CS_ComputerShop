@@ -1,11 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "QoF4YX8mz9Q=",
+  "dgSpecHash": "Dm/W7z5dx+U=",
   "success": true,
   "projectFilePath": "D:\\Materiały na studia\\Materiały na studia\\Semestr VI\\PIAB\\StronaSklepKomputerowy\\Firma.Intranet\\Firma.Intranet.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Bartek\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Bartek\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
+    "C:\\Users\\Bartek\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\Bartek\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\Bartek\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Bartek\\.nuget\\packages\\humanizer.core.af\\2.14.1\\humanizer.core.af.2.14.1.nupkg.sha512",

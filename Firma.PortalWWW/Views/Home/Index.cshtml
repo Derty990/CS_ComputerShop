@@ -1,9 +1,7 @@
-﻿@* Upewnij się, że masz te usingi na górze pliku Index.cshtml *@
-@using Firma.Data.Data.CMS
+﻿@using Firma.Data.Data.CMS
 @using Firma.Data.Data.Shop
 
 @{
-    // Twoje deklaracje ViewBag pozostają bez zmian
     var selectedPage = ViewBag.SelectedPage as Page;
     var topicalities = ViewBag.ModelAktualnosci as IEnumerable<Topicality>;
     var featuredProductTypes = ViewBag.FeaturedProductTypes as IEnumerable<ProductType>;
@@ -23,8 +21,7 @@
 }
 else
 {
-    // Hero Banner pozostaje bez zmian
-    <div class="main-banner position-relative mb-5" style="background-image: url('/content/msirx.png'); min-height: 400px; background-size: cover; background-position: center;">
+    <div class="main-banner position-relative mb-5" style="background-image: url('/content/producttypes/gpu/msirx.png'); min-height: 400px; background-size: cover; background-position: center;">
         <div class="container h-100">
             <div class="row h-100 align-items-center">
                 <div class="col-md-6">
@@ -54,7 +51,6 @@ else
                                          class="card-img-top"
                                          alt="@productType.Name"
                                          style="height: 250px; width: 100%; object-fit: contain;">
-                                    @* ZMIANA: height: 250px (zamiast max-height), usunięto padding-top, dodano width: 100% dla pewności *@
                                 </a>
                                 <div class="card-body d-flex flex-column">
                                     <h5 class="card-title">@productType.Name</h5>
@@ -68,7 +64,6 @@ else
             </section>
         }
 
-        @* Sekcja "Polecane produkty" pozostaje taka sama jak w poprzedniej odpowiedzi *@
         @if (featuredProducts != null && featuredProducts.Any())
         {
             <section class="mb-5">
@@ -109,7 +104,6 @@ else
             </section>
         }
 
-        @* Sekcja "Najnowsze artykuły" pozostaje taka sama jak w poprzedniej odpowiedzi *@
         <section class="mb-5">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h2>Najnowsze artykuły</h2>
@@ -120,16 +114,26 @@ else
                     @foreach (var article in topicalities)
                     {
                         <div class="col-md-4">
-                            <div class="card blog-card h-100">
-                                <img src="@(string.IsNullOrEmpty(article.PhotoUrl) ? "/content/placeholder-article.png" : article.PhotoUrl)" class="card-img-top blog-image" alt="@article.Title" style="height: 200px; object-fit: cover;">
+                            <div class="card blog-card h-100 d-flex flex-column">
+                                @* Dodano d-flex flex-column do card dla lepszego ułożenia stopki *@
+                                <img src="@(string.IsNullOrEmpty(article.PhotoUrl) ? Url.Content("~/content/placeholder-article.png") : Url.Content("~" + article.PhotoUrl))"
+                                     class="card-img-top blog-image"
+                                     alt="@article.Title"
+                                     style="height: 200px; object-fit: cover;">
                                 <div class="card-body d-flex flex-column">
-                                    <h5 class="card-title flex-grow-1">@article.Title</h5>
+                                    <h5 class="card-title">@article.Title</h5> @* Usunięto flex-grow-1, aby tytuł nie rozpychał wszystkiego *@
                                     <p class="card-text">
                                         @(article.Contents.Length > 150 ? article.Contents.Substring(0, 150) + "..." : article.Contents)
                                     </p>
+                                    <a asp-controller="Home" asp-action="ArticleDetails" asp-route-id="@article.IdTopicality"
+                                       class="btn btn-outline-primary btn-sm mt-auto align-self-start">
+                                        @* mt-auto pcha przycisk na dół, align-self-start do lewej *@
+                                        Czytaj więcej
+                                    </a>
                                 </div>
                             </div>
                         </div>
+                        
                     }
                 </div>
             }
@@ -139,7 +143,6 @@ else
             }
         </section>
 
-        @* Sekcja "Newsletter" pozostaje bez zmian *@
         <section class="mb-5 py-4 bg-light rounded">
             <div class="row justify-content-center">
                 <div class="col-md-8 text-center">

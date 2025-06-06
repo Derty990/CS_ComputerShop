@@ -225,8 +225,17 @@ namespace Firma.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("DisplayOrderHomepage")
+                        .HasColumnType("int");
+
                     b.Property<int>("IdProductType")
                         .HasColumnType("int");
+
+                    b.Property<bool>("IsFeaturedOnHomepage")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("IsInStock")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -257,6 +266,12 @@ namespace Firma.Data.Migrations
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int?>("DisplayOrderHomepage")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("IsFeaturedOnHomepage")
+                        .HasColumnType("bit");
 
                     b.Property<string>("Name")
                         .IsRequired()

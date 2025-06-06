@@ -4,8 +4,6 @@
     ViewData["Title"] = "Edytuj produkt"; 
 }
 
-<h1>@ViewData["Title"]</h1>
-
 <h4>Produkt: @Model.Name</h4> 
 <hr />
 <div class="row">
@@ -60,7 +58,25 @@
                 <textarea asp-for="Description" class="form-control" rows="4"></textarea> 
                 <span asp-validation-for="Description" class="text-danger"></span>
             </div>
+
+            <div class="form-group form-check mb-3">
+                <input class="form-check-input" asp-for="IsFeaturedOnHomepage" />
+                <label class="form-check-label" asp-for="IsFeaturedOnHomepage">@Html.DisplayNameFor(model => model.IsFeaturedOnHomepage)</label>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="DisplayOrderHomepage" class="control-label"></label>
+                <input asp-for="DisplayOrderHomepage" class="form-control" type="number" />
+                <span asp-validation-for="DisplayOrderHomepage" class="text-danger"></span>
+                <small class="form-text text-muted">Wprowadź liczbę dla kolejności na stronie głównej (np. 1, 2, 3...). Mniejsza liczba = wyżej. Pozostaw puste, jeśli nieistotne.</small>
+            </div>
             
+            <div class="form-group form-check mb-3">
+                <input class="form-check-input" asp-for="IsInStock" />
+                <label class="form-check-label" asp-for="IsInStock">@Html.DisplayNameFor(model => model.IsInStock)</label>
+                <span asp-validation-for="IsInStock" class="text-danger"></span>
+            </div>
+
             <div class="mt-4"> 
                 <button type="submit" class="btn btn-primary">
                     <i class="bi bi-save me-1"></i> Zapisz zmiany

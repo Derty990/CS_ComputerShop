@@ -20,6 +20,9 @@ namespace Firma.Data.Data.Shop
         [Column(TypeName = "money")]
         public decimal Price { get; set; }
 
+        [Display(Name = "Dostępność (w magazynie)")]
+        public bool IsInStock { get; set; } = true; // Domyślnie produkt jest dostępny
+
         [Required(ErrorMessage = "Product photo is required")]
         [Display(Name = "Product photo")]
         public required string PhotoUrl { get; set; }
@@ -32,6 +35,12 @@ namespace Firma.Data.Data.Shop
         public int IdProductType { get; set; }
 
         public ProductType? ProductType { get; set; }
+
+        [Display(Name = "Polecany na stronie głównej?")]
+        public bool IsFeaturedOnHomepage { get; set; } = false;
+
+        [Display(Name = "Kolejność wyświetlania (SG)")]
+        public int? DisplayOrderHomepage { get; set; }
 
 
     }

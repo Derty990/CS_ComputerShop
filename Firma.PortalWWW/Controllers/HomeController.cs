@@ -1,12 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using Firma.Data.Data; // DostÍp do FirmaContext
+using Firma.Data.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
 using System.Linq;
-using Firma.PortalWWW.Models; // Dla ErrorViewModel
+using Firma.PortalWWW.Models; 
 using System.Diagnostics;
-using Firma.Data.Data.CMS; // Potrzebne dla PageMenuPlacement i Page
+using Firma.Data.Data.CMS;
 
 namespace Firma.PortalWWW.Controllers
 {
@@ -37,9 +37,9 @@ namespace Firma.PortalWWW.Controllers
 
         public async Task<IActionResult> Index(int? id) // id to IdPage z CMS.Page
         {
-            await PopulateLayoutNavPages(); // £adujemy strony do menu i stopki dla layoutu
+            await PopulateLayoutNavPages(); // £aduje strony do menu i stopki dla layoutu
 
-            if (id.HasValue) // Jeúli przekazano ID, wyúwietlamy konkretnπ stronÍ Page
+            if (id.HasValue) // Jeúli przekazano ID, wyúwietlam konkretnπ stronÍ Page
             {
                 var pageToShow = await _context.Page.FindAsync(id.Value);
                 if (pageToShow != null)
@@ -51,7 +51,7 @@ namespace Firma.PortalWWW.Controllers
                 _logger.LogWarning($"Nie znaleziono strony o ID: {id.Value}");
                 return NotFound();
             }
-            else // Wyúwietlamy standardowπ stronÍ g≥Ûwnπ
+            else // Wyúwietlam standardowπ stronÍ g≥Ûwnπ
             {
                 ViewData["Title"] = "Strona g≥Ûwna";
 
@@ -63,34 +63,36 @@ namespace Firma.PortalWWW.Controllers
 
                 // Pobieranie kategorii produktÛw do sekcji "Kategorie produktÛw"
                 ViewBag.FeaturedProductTypes = await _context.ProductType
-                                        .OrderBy(pt => pt.Name) 
-                                        .ToListAsync();
+                                    .Where(pt => pt.IsFeaturedOnHomepage) // Pobieram tylko polecane
+                                    .OrderBy(pt => pt.DisplayOrderHomepage) // Sortuje wed≥ug kolejnoúci
+                                    .ThenBy(pt => pt.Name) // Dodatkowe sortowanie po nazwie
+                                    .ToListAsync();
 
                 // Pobieranie produktÛw do sekcji "Polecane produkty"
                 ViewBag.FeaturedProducts = await _context.Product
-                                                    .Include(p => p.ProductType) // TO JEST POPRAWNE, bo ProductType to encja powiπzana
-                                                    .OrderByDescending(p => p.IdProduct)
-                                                    .Take(4)
-                                                    .ToListAsync();
+                                 .Where(p => p.IsFeaturedOnHomepage) // Pobieram tylko polecane
+                                 .Include(p => p.ProductType) // Do≥πczenie nazwy kategorii
+                                 .OrderBy(p => p.DisplayOrderHomepage) // Sortowanie wed≥ug kolejnoúci na SG
+                                 .ThenByDescending(p => p.IdProduct) // Dodatkowe sortowanie, np. najnowsze z polecanych
+                                 .ToListAsync(); // Moøna dodaÊ .Take(X), do ograniczenya liczby produtkÛw
+
                 return View();
             }
         }
-
+        //TUTAJ DO POPRAWY, COå JEST èLE, STRONA PRYWATNOSCI NIE JEST ZARZ•DZANA DYNAMICZNIE
         public async Task<IActionResult> Privacy()
         {
             await PopulateLayoutNavPages();
 
-            // Logika dla strony PrywatnoúÊ - moøe byÊ zarzπdzana przez CMS
-            // Ustaw unikalny TitleLink (np. "polityka-prywatnosci") dla strony Polityka Prywatnoúci w Intranecie
-            // i oznacz jπ jako MenuPlacement.FooterMenu
+            
             var privacyPage = await _context.Page
                                     .FirstOrDefaultAsync(p => p.TitleLink.ToLower() == "polityka-prywatnosci");
 
             if (privacyPage != null)
             {
-                ViewBag.SelectedPage = privacyPage; // Przekazujemy do Index.cshtml jako wybranπ stronÍ
+                ViewBag.SelectedPage = privacyPage; // Przekazuje do Index.cshtml jako wybranπ stronÍ
                 ViewData["Title"] = privacyPage.Title;
-                return View("Index"); // Uøywamy widoku Index.cshtml do wyúwietlenia treúci
+                return View("Index"); // Uøywam widoku Index.cshtml do wyúwietlenia treúci
             }
 
             // Fallback, jeúli strona "Polityka prywatnoúci" nie jest zarzπdzana przez CMS lub nie zosta≥a znaleziona
@@ -103,6 +105,26 @@ namespace Firma.PortalWWW.Controllers
         {
             await PopulateLayoutNavPages();
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public async Task<IActionResult> ArticleDetails(int? id)
+        {
+            await PopulateLayoutNavPages(); // Dla menu w layout
+
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var article = await _context.Topicality.FindAsync(id);
+
+            if (article == null)
+            {
+                return NotFound();
+            }
+
+            ViewData["Title"] = article.Title;
+            return View(article); // Przekazuje ca≥π encjÍ Topicality do nowego widoku
         }
     }
 }

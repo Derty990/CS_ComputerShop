@@ -1,24 +1,30 @@
 ﻿@model IEnumerable<Firma.PortalWWW.Models.Shop.ProductViewModel>
-@using Firma.Data.Data.Shop 
+@using Firma.Data.Data.Shop
 
 @{
-    ViewData["Title"] = "Sklep";
-    if (ViewBag.SelectedCategoryName != null)
+    // Pobieram aktualne wartości filtrów i sortowania z ViewBag
+    string? currentSearch = ViewBag.CurrentSearch as string;
+    string currentSort = ViewBag.CurrentSort as string ?? "nameAsc";
+    int? currentProductTypeId = ViewBag.CurrentProductTypeId as int?;
+
+    // Tytuł strony jest teraz ustawiany dynamicznie w ShopController,
+    // więc ta sekcja nie jest już konieczna, ale może zostać jako fallback.
+    if (ViewData["Title"] == null)
     {
-        ViewData["Title"] += " - " + ViewBag.SelectedCategoryName;
+        ViewData["Title"] = "Sklep";
+        if (ViewBag.SelectedProductTypeName != null)
+        {
+            ViewData["Title"] += " - " + ViewBag.SelectedProductTypeName;
+        }
     }
-    // Pobieramy aktualne wartości filtrów z ViewBag, aby ustawić je w formularzu
-    string currentSearch = ViewBag.CurrentSearch as string;
-    string currentSort = ViewBag.CurrentSort as string ?? "nameAsc"; // Domyślne sortowanie, jeśli null
-    int? currentCategoryId = ViewBag.CurrentCategoryId as int?;
 }
 
 <div class="container py-5">
     <div class="mb-4">
         <h1 class="mb-3">
-            @if (ViewBag.SelectedCategoryName != null)
+            @if (ViewBag.SelectedProductTypeName != null)
             {
-                @ViewBag.SelectedCategoryName
+                @ViewBag.SelectedProductTypeName
             }
             else if (!string.IsNullOrEmpty(currentSearch))
             {
@@ -32,10 +38,10 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Strona główna</a></li>
-                @if (ViewBag.SelectedCategoryName != null)
+                @if (ViewBag.SelectedProductTypeName != null)
                 {
                     <li class="breadcrumb-item"><a asp-controller="Shop" asp-action="Index">Sklep</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">@ViewBag.SelectedCategoryName</li>
+                    <li class="breadcrumb-item active" aria-current="page">@ViewBag.SelectedProductTypeName</li>
                 }
                 else
                 {
@@ -46,9 +52,13 @@
     </div>
 
     <div class="row">
-        <div class="col-md-3 mb-4">
-            @* Formularz obejmujący wszystkie filtry i sortowanie *@
+        @* Panel boczny z filtrami *@
+        <div class="col-lg-3 mb-4">
+            @* Formularz obejmujący wszystkie filtry (wyszukiwanie, kategorie, cena) *@
             <form asp-action="Index" asp-controller="Shop" method="get">
+                @* Przekazuje ukryte pole dla sortowania, aby nie resetowało się przy filtrowaniu *@
+                <input type="hidden" name="sortBy" value="@currentSort" />
+
                 <div class="card mb-4">
                     <div class="card-header bg-primary text-white"><h5 class="mb-0">Wyszukaj</h5></div>
                     <div class="card-body">
@@ -64,15 +74,15 @@
                         <h5 class="mb-0">Kategorie</h5>
                     </div>
                     <div class="list-group list-group-flush">
-                        <button type="submit" name="categoryId" value="" class="list-group-item list-group-item-action @(currentCategoryId == null ? "active" : "")">
+                        <button type="submit" name="productTypeId" value="" class="list-group-item list-group-item-action @(currentProductTypeId == null ? "active" : "")">
                             Wszystkie produkty
                         </button>
                         @if (ViewBag.ProductTypes != null)
                         {
                             foreach (var category in (IEnumerable<ProductType>)ViewBag.ProductTypes)
                             {
-                                <button type="submit" name="categoryId" value="@category.IdProductType"
-                                        class="list-group-item list-group-item-action @(currentCategoryId == category.IdProductType ? "active" : "")">
+                                <button type="submit" name="productTypeId" value="@category.IdProductType"
+                                        class="list-group-item list-group-item-action @(currentProductTypeId == category.IdProductType ? "active" : "")">
                                     @category.Name
                                 </button>
                             }
@@ -85,6 +95,7 @@
                         <h5 class="mb-0">Filtruj wg ceny</h5>
                     </div>
                     <div class="card-body">
+                        @* Funkcjonalność filtrowania po cenie wymaga implementacji w ShopController. Na razie jest to tylko element UI. *@
                         <div class="mb-3">
                             <label for="priceRange" class="form-label">Maksymalna cena: <span id="priceValue">5000</span> zł</label>
                             <input type="range" class="form-range" id="priceRange" min="0" max="5000" step="100" value="5000" name="maxPrice">
@@ -92,22 +103,17 @@
                         <button class="btn btn-outline-primary w-100" type="submit">Zastosuj filtr ceny</button>
                     </div>
                 </div>
-
-                @* Ukryte pole do przekazywania aktualnego sortowania, gdy zmienia się inny filtr *@
-                @if (!string.IsNullOrEmpty(currentSort) && currentSort != "nameAsc")
-                {
-                    <input type="hidden" name="sortBy" value="@currentSort" />
-                }
-            </form> @* Koniec formularza filtrów *@
+            </form>
         </div>
 
-        <div class="col-md-9">
+        @* Główna sekcja z produktami *@
+        <div class="col-lg-9">
             <div class="card mb-4">
                 <div class="card-body d-flex justify-content-between align-items-center">
                     <div>
                         @if (Model != null)
                         {
-                            <span>Pokazuje <strong>@Model.Count()</strong> produktów</span>
+                            <span>Pokazano <strong>@Model.Count()</strong> produktów</span>
                         }
                     </div>
                     <div class="d-flex align-items-center">
@@ -117,11 +123,11 @@
                             {
                                 <input type="hidden" name="searchString" value="@currentSearch" />
                             }
-                            @if (currentCategoryId.HasValue)
+                            @if (currentProductTypeId.HasValue)
                             {
-                                <input type="hidden" name="categoryId" value="@currentCategoryId.Value" />
+                                <input type="hidden" name="productTypeId" value="@currentProductTypeId.Value" />
                             }
-                            @* Można dodać też maxPrice, jeśli jest używane *@
+                            @* Można dodać też maxPrice *@
 
                             <label class="me-2" for="sortBySelect">Sortuj według:</label>
                             <select class="form-select form-select-sm" style="width: auto;" name="sortBy" id="sortBySelect" onchange="document.getElementById('sortForm').submit();">
@@ -129,7 +135,6 @@
                                 <option value="nameDesc" selected="@(currentSort == "nameDesc")">Nazwa: Z-A</option>
                                 <option value="priceAsc" selected="@(currentSort == "priceAsc")">Cena: od najniższej</option>
                                 <option value="priceDesc" selected="@(currentSort == "priceDesc")">Cena: od najwyższej</option>
-                                @* <option value="popularity" selected="@(currentSort == "popularity")">Popularność</option> *@
                             </select>
                         </form>
                     </div>
@@ -143,14 +148,14 @@
                     {
                         <div class="col">
                             <div class="card h-100 product-card d-flex flex-column">
-                                @if (product.IsOnSale) // Jeśli ProductViewModel ma to pole i jest ono ustawiane
+                                @if (product.IsOnSale)
                                 {
                                     <span class="position-absolute top-0 end-0 bg-danger text-white m-2 px-2 py-1 rounded-3 small">
                                         Promocja
                                     </span>
                                 }
                                 <a asp-action="Product" asp-controller="Shop" asp-route-id="@product.Id" class="text-decoration-none">
-                                    <img src="@(string.IsNullOrEmpty(product.ImageUrl) ? "/content/placeholder-product.png" : product.ImageUrl)"
+                                    <img src="@(string.IsNullOrEmpty(product.ImageUrl) ? Url.Content("~/content/placeholder-product.png") : Url.Content("~" + product.ImageUrl))"
                                          class="card-img-top" alt="@product.Name" style="height: 200px; object-fit: contain; padding-top:10px;">
                                 </a>
                                 <div class="card-body d-flex flex-column">
@@ -161,9 +166,8 @@
                                         </a>
                                     </h5>
                                     <div class="mt-auto">
-                                        @* Ta sekcja na dole karty *@
                                         <div>
-                                            @if (product.OldPrice.HasValue) // Jeśli ProductViewModel ma to pole
+                                            @if (product.OldPrice.HasValue)
                                             {
                                                 <span class="text-danger fw-bold">@product.Price.ToString("C")</span>
                                                 <small class="text-muted text-decoration-line-through ms-2">@product.OldPrice.Value.ToString("C")</small>
@@ -174,7 +178,6 @@
                                             }
                                         </div>
                                         <span class="badge bg-@(product.IsInStock ? "success" : "danger") mt-1">
-                                            @* Jeśli ProductViewModel ma to pole *@
                                             @(product.IsInStock ? "W magazynie" : "Niedostępny")
                                         </span>
                                     </div>
@@ -184,10 +187,14 @@
                                         <a asp-action="Product" asp-controller="Shop" asp-route-id="@product.Id" class="btn btn-sm btn-outline-secondary">
                                             <i class="bi bi-eye me-1"></i> Szczegóły
                                         </a>
-                                        <button type="button" class="btn btn-sm btn-primary add-to-cart-btn" data-product-id="@product.Id" @(product.IsInStock ? "" : "disabled")>
-                                            @* Funkcjonalność do dodania później *@
-                                            <i class="bi bi-cart-plus me-1"></i> Dodaj
-                                        </button>
+                                        <form asp-controller="Cart" asp-action="AddToCart" method="post" class="d-inline">
+                                            @Html.AntiForgeryToken()
+                                            <input type="hidden" name="productId" value="@product.Id" />
+                                            <input type="hidden" name="quantity" value="1" />
+                                            <button type="submit" class="btn btn-sm btn-primary add-to-cart-btn" @(product.IsInStock ? "" : "disabled")>
+                                                <i class="bi bi-cart-plus me-1"></i> Dodaj
+                                            </button>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -202,16 +209,58 @@
                 }
             </div>
 
-            @* TODO: Implementacja paginacji, jeśli jest potrzebna *@
-            @* <nav aria-label="Page navigation example" class="mt-5">
-        <ul class="pagination justify-content-center">
-            <li class="page-item disabled"><a class="page-link" href="#">Poprzednia</a></li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Następna</a></li>
-        </ul>
-    </nav> *@
+            @* Sekcja Paginacji *@
+            @if (Model != null && Model.Any() && ViewBag.TotalPages != null && ViewBag.TotalPages > 1)
+            {
+                <nav aria-label="Nawigacja po stronach produktów" class="mt-5">
+                    <ul class="pagination justify-content-center">
+                        @if (ViewBag.PageNumber > 1)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" asp-action="Index"
+                                   asp-route-productTypeId="@ViewBag.CurrentProductTypeId"
+                                   asp-route-sortBy="@ViewBag.CurrentSort"
+                                   asp-route-searchString="@ViewBag.CurrentSearch"
+                                   asp-route-pageNumber="@(ViewBag.PageNumber - 1)">Poprzednia</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Poprzednia</a>
+                            </li>
+                        }
+
+                        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                        {
+                            <li class="page-item @(i == ViewBag.PageNumber ? "active" : "")">
+                                <a class="page-link" asp-action="Index"
+                                   asp-route-productTypeId="@ViewBag.CurrentProductTypeId"
+                                   asp-route-sortBy="@ViewBag.CurrentSort"
+                                   asp-route-searchString="@ViewBag.CurrentSearch"
+                                   asp-route-pageNumber="@i">@i</a>
+                            </li>
+                        }
+
+                        @if (ViewBag.PageNumber < ViewBag.TotalPages)
+                        {
+                            <li class="page-item">
+                                <a class="page-link" asp-action="Index"
+                                   asp-route-productTypeId="@ViewBag.CurrentProductTypeId"
+                                   asp-route-sortBy="@ViewBag.CurrentSort"
+                                   asp-route-searchString="@ViewBag.CurrentSearch"
+                                   asp-route-pageNumber="@(ViewBag.PageNumber + 1)">Następna</a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Następna</a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            }
         </div>
     </div>
 </div>

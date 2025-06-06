@@ -9,6 +9,7 @@ D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputer
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Intranet\bin\Debug\net8.0\Firma.Intranet.pdb
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Intranet\bin\Debug\net8.0\Azure.Core.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Intranet\bin\Debug\net8.0\Azure.Identity.dll
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Intranet\bin\Debug\net8.0\BCrypt.Net-Next.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Intranet\bin\Debug\net8.0\Humanizer.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Intranet\bin\Debug\net8.0\Microsoft.AspNetCore.Razor.Language.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.Intranet\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll

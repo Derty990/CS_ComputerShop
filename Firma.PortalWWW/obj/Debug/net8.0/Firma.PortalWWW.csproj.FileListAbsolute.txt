@@ -1,3 +1,12 @@
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.csproj.AssemblyReference.cache
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.GeneratedMSBuildEditorConfig.editorconfig
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.AssemblyInfoInputs.cache
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.AssemblyInfo.cs
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.csproj.CoreCompileInputs.cache
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.MvcApplicationPartsAssemblyInfo.cache
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.RazorAssemblyInfo.cache
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.RazorAssemblyInfo.cs
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.sourcelink.json
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\appsettings.Development.json
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\appsettings.json
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\Firma.PortalWWW.staticwebassets.runtime.json
@@ -9,6 +18,7 @@ D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputer
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\Firma.PortalWWW.pdb
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\Azure.Core.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\Azure.Identity.dll
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\BCrypt.Net-Next.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\Microsoft.Data.SqlClient.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
@@ -31,6 +41,7 @@ D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputer
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\System.ClientModel.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\System.Drawing.Common.dll
@@ -54,15 +65,6 @@ D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputer
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\Firma.Data.dll
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\bin\Debug\net8.0\Firma.Data.pdb
-D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.csproj.AssemblyReference.cache
-D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.GeneratedMSBuildEditorConfig.editorconfig
-D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.AssemblyInfoInputs.cache
-D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.AssemblyInfo.cs
-D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.csproj.CoreCompileInputs.cache
-D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.MvcApplicationPartsAssemblyInfo.cache
-D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.RazorAssemblyInfo.cache
-D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.RazorAssemblyInfo.cs
-D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\Firma.PortalWWW.sourcelink.json
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\scopedcss\bundle\Firma.PortalWWW.styles.css
 D:\Materiały na studia\Materiały na studia\Semestr VI\PIAB\StronaSklepKomputerowy\Firma.PortalWWW\obj\Debug\net8.0\scopedcss\projectbundle\Firma.PortalWWW.bundle.scp.css

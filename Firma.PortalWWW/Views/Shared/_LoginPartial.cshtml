@@ -1,0 +1,33 @@
+﻿@using System.Security.Claims
+
+@if (User.Identity != null && User.Identity.IsAuthenticated)
+{
+    // Użytkownik zalogowany
+    <li class="nav-item">
+        <span class="nav-link text-dark">Witaj @User.FindFirst(ClaimTypes.Name)?.Value!</span>
+    </li>
+    <li class="nav-item">
+        <form asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="form-inline">
+            <button type="submit" class="nav-link btn btn-link text-dark" style="padding-top: 0.6rem; padding-bottom: 0.6rem;">
+                @* Drobna korekta paddingu dla btn-link w navbarze *@
+                <i class="bi bi-box-arrow-right me-1"></i>Wyloguj się
+            </button>
+        </form>
+    </li>
+}
+else
+{
+    // Użytkownik niezalogowany - stylizujemy jako niebieskie przyciski
+    <li class="nav-item me-2">
+        @* me-2 dla małego marginesu po prawej *@
+        <a class="btn btn-primary btn-sm" asp-controller="Account" asp-action="Register">
+            <i class="bi bi-person-plus-fill"></i> Zarejestruj się
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="btn btn-outline-primary btn-sm" asp-controller="Account" asp-action="Login">
+            @* Używamy btn-outline-primary dla drugiego przycisku *@
+            <i class="bi bi-box-arrow-in-right"></i> Zaloguj się
+        </a>
+    </li>
+}

@@ -28,6 +28,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Materiały na studia/Materiały na studia/Semestr VI/PIAB/StronaSklepKomputerowy/Firma.PortalWWW/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Materiały na studia/Materiały na studia/Semestr VI/PIAB/StronaSklepKomputerowy/Firma.PortalWWW/Views/Home/ArticleDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBcnRpY2xlRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Materiały na studia/Materiały na studia/Semestr VI/PIAB/StronaSklepKomputerowy/Firma.PortalWWW/Views/Home/HistoriaFirmy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxIaXN0b3JpYUZpcm15LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -46,6 +54,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Materiały na studia/Materiały na studia/Semestr VI/PIAB/StronaSklepKomputerowy/Firma.PortalWWW/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Materiały na studia/Materiały na studia/Semestr VI/PIAB/StronaSklepKomputerowy/Firma.PortalWWW/Views/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Materiały na studia/Materiały na studia/Semestr VI/PIAB/StronaSklepKomputerowy/Firma.PortalWWW/Views/Shared/_Odnosniki.cshtml]
