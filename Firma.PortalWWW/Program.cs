@@ -4,7 +4,10 @@ using Firma.Data.Data;
 using Firma.Data.Data.Customers;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Firma.PortalWWW.Services;
-using Firma.PortalWWW.Interfaces; 
+using Firma.PortalWWW.Interfaces;
+using FluentEmail.Core;
+using FluentEmail.MailKitSmtp;
+using MailKit.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -24,6 +27,26 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
         options.SlidingExpiration = true;
     });
 
+
+var mailtrapUser = "51a82b127b6d4e";
+var mailtrapPass = "7dfec8eb7be953";
+
+builder.Services
+       .AddFluentEmail("potwierdzenie@vivitech.pl", "Vivitech Sklep")
+       .AddRazorRenderer()
+       // U¿ywam POPRAWNEJ nazwy klasy: SmtpClientOptions
+       .AddMailKitSender(new SmtpClientOptions
+       {
+           Server = "sandbox.smtp.mailtrap.io",
+           Port = 587,
+           User = mailtrapUser,
+           Password = mailtrapPass,
+           SocketOptions = MailKit.Security.SecureSocketOptions.StartTls,
+
+           RequiresAuthentication = true
+       });
+
+
 // Konfiguracja autoryzacji 
 builder.Services.AddAuthorization(options =>
 {
@@ -34,8 +57,9 @@ builder.Services.AddAuthorization(options =>
 //  Rejestracja IHttpContextAccessor
 builder.Services.AddHttpContextAccessor();
 
-//  Rejestracja serwisu koszyka
+//  Rejestracja serwisów
 builder.Services.AddScoped<ICartService, CartService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
 
 //  Konfiguracja sesji
 builder.Services.AddDistributedMemoryCache(); // Wymagane dla sesji w pamiêci (domyœlne)
@@ -45,6 +69,9 @@ builder.Services.AddSession(options =>
     options.Cookie.HttpOnly = true; // Ciasteczko sesji dostêpne tylko przez HTTP
     options.Cookie.IsEssential = true; // Oznacz ciasteczko sesji jako niezbêdne dla dzia³ania aplikacji (np. zgodnoœæ z RODO)
 });
+
+QuestPDF.Settings.License = QuestPDF.Infrastructure.LicenseType.Community;
+
 
 var app = builder.Build();
 

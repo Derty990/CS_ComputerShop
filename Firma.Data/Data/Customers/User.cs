@@ -44,6 +44,4 @@ namespace Firma.Data.Data.Customers
         Admin,
         Moderator
     }
-
-
 }

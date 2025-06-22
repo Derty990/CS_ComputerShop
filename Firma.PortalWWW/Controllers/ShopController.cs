@@ -25,7 +25,7 @@ namespace Firma.PortalWWW.Controllers
             string? searchString = null,
             int pageNumber = 1)
         {
-            int pageSize = 8;
+            int pageSize = 9;
 
             ViewBag.ProductTypes = await _context.ProductType
                                         .OrderBy(pt => pt.Name)

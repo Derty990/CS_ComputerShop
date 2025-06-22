@@ -16,6 +16,7 @@ namespace Firma.Data.Data.Shop
         [Required(ErrorMessage = "Product name is required")]
         public required string Name { get; set; }
 
+        [DisplayFormat(DataFormatString = "{0:N2}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Product price is required")]
         [Column(TypeName = "money")]
         public decimal Price { get; set; }

@@ -1,0 +1,34 @@
+﻿@{
+    ViewData["Title"] = "Panel Klienta";
+}
+
+<div class="container my-5">
+    <h1 class="mb-4">@ViewData["Title"]</h1>
+    <p class="lead">Witaj w swoim panelu! Stąd możesz zarządzać swoimi zamówieniami i danymi konta.</p>
+
+    <div class="row mt-4 g-4">
+
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-box-seam" style="font-size: 3rem; color: var(--bs-primary);"></i>
+                    <h5 class="card-title mt-3">Historia zamówień</h5>
+                    <p class="card-text">Przeglądaj swoje przeszłe i obecne zamówienia, śledź ich status i pobieraj faktury.</p>
+                    <a asp-controller="Account" asp-action="Orders" class="btn btn-primary">Przejdź do zamówień</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100">
+                <div class="card-body text-center">
+                    <i class="bi bi-person-lines-fill" style="font-size: 3rem; color: var(--bs-secondary);"></i>
+                    <h5 class="card-title mt-3">Dane konta</h5>
+                    <p class="card-text">Zaktualizuj swoje dane osobowe, adresy dostawy lub zmień hasło do swojego konta.</p>
+                    <a href="#" class="btn btn-secondary disabled">Wkrótce dostępne</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -145,13 +145,35 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "FluentEmail.MailKit": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
+            "FluentEmail.Razor": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.11, )"
             },
-            "Newtonsoft.Json": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[13.0.3, )"
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.11, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "QuestPDF": {
+              "target": "Package",
+              "version": "[2025.5.1, )"
             }
           },
           "imports": [

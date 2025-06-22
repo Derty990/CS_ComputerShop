@@ -191,6 +191,9 @@
                                             @Html.AntiForgeryToken()
                                             <input type="hidden" name="productId" value="@product.Id" />
                                             <input type="hidden" name="quantity" value="1" />
+                                            @* Przekierowanie na określoną stronę po kliknięciu przycisku *@
+                                            <input type="hidden" name="returnUrl" value="@(Context.Request.Path + Context.Request.QueryString)" />
+
                                             <button type="submit" class="btn btn-sm btn-primary add-to-cart-btn" @(product.IsInStock ? "" : "disabled")>
                                                 <i class="bi bi-cart-plus me-1"></i> Dodaj
                                             </button>

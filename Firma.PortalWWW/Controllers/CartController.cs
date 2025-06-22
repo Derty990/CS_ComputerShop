@@ -32,7 +32,7 @@ namespace Firma.PortalWWW.Controllers
         // Obsługuje dodawanie do koszyka
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> AddToCart(int productId, int quantity = 1)
+        public async Task<IActionResult> AddToCart(int productId, int quantity = 1, string? returnUrl = null)
         {
             if (productId <= 0 || quantity <= 0)
             {
@@ -44,12 +44,20 @@ namespace Firma.PortalWWW.Controllers
             TempData["CartSuccessMessage"] = "Produkt został dodany do twojego koszyka!";
             _logger.LogInformation("Added product {ProductId} with quantity {Quantity} to cart.", productId, quantity);
 
-            // Przekieruj z powrotem do strony z której przyszedł użytkownik
+            /*// Przekieruj z powrotem do strony z której przyszedł użytkownik
             string referer = Request.Headers["Referer"].ToString();
             if (!string.IsNullOrEmpty(referer) && Url.IsLocalUrl(referer))
             {
                 return Redirect(referer);
+            }*/
+
+            // Sprawdzam, czy przekazano bezpieczny adres powrotu.
+            if (Url.IsLocalUrl(returnUrl))
+            {
+                // Jeśli tak, wracam pod ten adres.
+                return Redirect(returnUrl);
             }
+
             return RedirectToAction("Index", "Shop");
         }
 

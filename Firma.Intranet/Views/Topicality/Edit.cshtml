@@ -4,14 +4,13 @@
     ViewData["Title"] = "Edytuj aktualność";
 }
 
-
-<h4>Dane aktualności: @Model.Title</h4> @* Kontekst edytowanej strony *@
+<h4>Dane aktualności: @Model.Title</h4>
 <hr />
 <div class="row">
     <div class="col-md-8">
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="IdTopicality" /> @* Kluczowe dla edycji *@
+            <input type="hidden" asp-for="IdTopicality" />
 
             <div class="row">
                 <div class="col-md-6">
@@ -32,7 +31,8 @@
 
             <div class="mb-3">
                 <label asp-for="Contents" class="form-label"></label>
-                <textarea asp-for="Contents" class="form-control" rows="10"></textarea>
+                @* 1. NADAJĘ UNIKALNE ID DLA TEXTAREA *@
+                <textarea asp-for="Contents" id="contentEditor" class="form-control" rows="10"></textarea>
                 <span asp-validation-for="Contents" class="text-danger"></span>
             </div>
 
@@ -64,4 +64,24 @@
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }
+
+    @* 2. DODAJĘ SKRYPTY DO OBSŁUGI TINYMCE *@
+
+    <script src="https://cdn.tiny.cloud/1/7153rmzxxrq6yx37xg4o8vq5c4hbm51tdud5n9nsy3xg4f35/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+
+    <script>
+        // Używam nasłuchiwania na zdarzenie załadowania całej struktury strony (DOM)
+        document.addEventListener('DOMContentLoaded', function () {
+          tinymce.init({
+            // Wskazuję, który element zamienić w edytor (za pomocą ID)
+            selector: '#contentEditor',
+            // Dodaję listę przydatnych pluginów
+            plugins: 'code table lists link image media',
+            // Konfiguruję, jakie przyciski mają być widoczne na pasku narzędzi
+            toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | indent outdent | bullist numlist | code | table | link image media',
+            // Ustawiam wysokość edytora
+            height: 400
+          });
+        });
+    </script>
 }

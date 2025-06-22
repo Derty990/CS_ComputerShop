@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+﻿
 <html lang="pl">
 <head>
     <meta charset="utf-8" />
@@ -68,10 +68,10 @@
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Shop" asp-action="Index" asp-route-productTypeId="3">Karty graficzne</a> @* Użyj poprawnego ID *@
+                            <a class="nav-link text-dark" asp-controller="Shop" asp-action="Index" asp-route-productTypeId="3">Karty graficzne</a> @* Użyć poprawnego ID *@
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-controller="Shop" asp-action="Index" asp-route-productTypeId="4">Procesory</a> @* Użyj poprawnego ID *@
+                            <a class="nav-link text-dark" asp-controller="Shop" asp-action="Index" asp-route-productTypeId="4">Procesory</a> @* Użyć poprawnego ID *@
                         </li>
 
                         @if (ViewBag.MainMenuPages != null)
@@ -98,96 +98,7 @@
         @RenderBody()
     </main>
 
-    <footer class="bg-dark text-white mt-auto pt-5">
-        <div class="container py-4">
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5>O nas</h5>
-                    <ul class="list-unstyled">
-                        @if (ViewBag.FooterMenuPages != null)
-                        {
-                            foreach (var footerPage in ((IEnumerable<Firma.Data.Data.CMS.Page>)ViewBag.FooterMenuPages)
-                            .Where(item => item.TitleLink.ToLower() == "vivitech" || item.TitleLink.ToLower() == "o firmie" || item.TitleLink.ToLower() == "nasz zespół" || item.TitleLink.ToLower() == "kariera")
-                            .OrderBy(item => item.Position))
-                            {
-                                <li><a asp-controller="Home" asp-action="Index" asp-route-id="@footerPage.IdPage" class="text-white-50">@footerPage.TitleLink</a></li>
-                            }
-                        }
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5>Obsługa klienta</h5>
-                    <ul class="list-unstyled">
-                        @if (ViewBag.FooterMenuPages != null)
-                        {
-                            foreach (var footerPage in ((IEnumerable<Firma.Data.Data.CMS.Page>)ViewBag.FooterMenuPages)
-                            .Where(item => item.TitleLink.ToLower() == "kontakt" || item.TitleLink.ToLower() == "zwroty i reklamacje" || item.TitleLink.ToLower() == "pomoc")
-                            .OrderBy(item => item.Position))
-                            {
-                                <li><a asp-controller="Home" asp-action="Index" asp-route-id="@footerPage.IdPage" class="text-white-50">@footerPage.TitleLink</a></li>
-                            }
-                        }
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5>Informacje</h5>
-                    <ul class="list-unstyled">
-                        @if (ViewBag.FooterMenuPages != null)
-                        {
-                            var allFooterInfoItems = (IEnumerable<Firma.Data.Data.CMS.Page>)ViewBag.FooterMenuPages;
-                            var privacyPolicyItem = allFooterInfoItems
-                            .FirstOrDefault(item => item.TitleLink.ToLower() == "polityka prywatności");
-                            if (privacyPolicyItem != null)
-                            {
-                                <li><a asp-controller="Home" asp-action="Index" asp-route-id="@privacyPolicyItem.IdPage" class="text-white-50">@privacyPolicyItem.TitleLink</a></li>
-                            }
-                            else
-                            {
-                                <li><a asp-controller="Home" asp-action="Privacy" class="text-white-50">Polityka prywatności</a></li>
-                            }
-
-                            foreach (var footerPage in allFooterInfoItems
-                            .Where(item => item.TitleLink.ToLower() == "regulamin" || item.TitleLink.ToLower() == "dostawa")
-                            .OrderBy(item => item.Position))
-                            {
-                                if (privacyPolicyItem == null || footerPage.IdPage != privacyPolicyItem.IdPage)
-                                {
-                                    <li><a asp-controller="Home" asp-action="Index" asp-route-id="@footerPage.IdPage" class="text-white-50">@footerPage.TitleLink</a></li>
-                                }
-                            }
-                        }
-                        else
-                        {
-                            <li><a asp-controller="Home" asp-action="Privacy" class="text-white-50">Polityka prywatności</a></li>
-                        }
-                    </ul>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <h5>Newsletter</h5>
-                    <p class="text-white-50">Bądź na bieżąco z nowościami i promocjami</p>
-                    <form asp-controller="Newsletter" asp-action="Subscribe" method="post">
-                        <div class="input-group mb-3">
-                            <input type="email" name="email" class="form-control" placeholder="Twój email" required>
-                            <button class="btn btn-primary" type="submit">Zapisz</button>
-                        </div>
-                    </form>
-                    <div class="mt-3">
-                        <a href="#" class="text-white me-2" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="text-white me-2" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="text-white me-2" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="text-white" aria-label="Youtube"><i class="bi bi-youtube"></i></a>
-                    </div>
-                </div>
-            </div>
-            <hr class="mt-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <p class="mb-0">&copy; @DateTime.Now.Year Vivitech - Wszelkie prawa zastrzeżone</p>
-                </div>
-                
-            </div>
-        </div>
-    </footer>
+    @await Component.InvokeAsync("Footer")
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>

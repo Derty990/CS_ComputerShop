@@ -22,23 +22,11 @@ namespace Firma.PortalWWW.Controllers
         }
 
         // Prywatna metoda pomocnicza do ≥adowania stron nawigacyjnych dla layoutu
-        private async Task PopulateLayoutNavPages()
-        {
-            ViewBag.MainMenuPages = await _context.Page
-                                        .Where(p => p.MenuPlacement == PageMenuPlacement.MainMenu)
-                                        .OrderBy(p => p.Position)
-                                        .ToListAsync();
-
-            ViewBag.FooterMenuPages = await _context.Page
-                                        .Where(p => p.MenuPlacement == PageMenuPlacement.FooterMenu)
-                                        .OrderBy(p => p.Position)
-                                        .ToListAsync();
-        }
+       
 
         public async Task<IActionResult> Index(int? id) // id to IdPage z CMS.Page
         {
-            await PopulateLayoutNavPages(); // £aduje strony do menu i stopki dla layoutu
-
+           
             if (id.HasValue) // Jeúli przekazano ID, wyúwietlam konkretnπ stronÍ Page
             {
                 var pageToShow = await _context.Page.FindAsync(id.Value);
@@ -79,11 +67,9 @@ namespace Firma.PortalWWW.Controllers
                 return View();
             }
         }
-        //TUTAJ DO POPRAWY, COå JEST èLE, STRONA PRYWATNOSCI NIE JEST ZARZ•DZANA DYNAMICZNIE
+        //TUTAJ DO POPRAWY, COå JEST èLE, STRONA PRYWATNOSCI MA NIE BY∆ ZARZ•DZANA DYNAMICZNIE
         public async Task<IActionResult> Privacy()
         {
-            await PopulateLayoutNavPages();
-
             
             var privacyPage = await _context.Page
                                     .FirstOrDefaultAsync(p => p.TitleLink.ToLower() == "polityka-prywatnosci");
@@ -103,14 +89,13 @@ namespace Firma.PortalWWW.Controllers
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public async Task<IActionResult> Error()
         {
-            await PopulateLayoutNavPages();
+            
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
         public async Task<IActionResult> ArticleDetails(int? id)
         {
-            await PopulateLayoutNavPages(); // Dla menu w layout
-
+          
             if (id == null)
             {
                 return NotFound();

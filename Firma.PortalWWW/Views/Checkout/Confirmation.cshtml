@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Dziękujemy!";
+}
+
+<div class="container mt-5 mb-5 text-center">
+    <div class="py-5">
+        <i class="bi bi-check-circle-fill text-success" style="font-size: 5rem;"></i>
+        <h1 class="display-4 mt-3">Dziękujemy za Twoje zamówienie!</h1>
+        <p class="lead">
+            Twoje zamówienie o numerze <strong>#@ViewBag.OrderId</strong> zostało pomyślnie złożone.
+        </p>
+        <hr>
+        <p>
+            Wkrótce otrzymasz e-mail z potwierdzeniem. Historię swoich zamówień możesz śledzić w panelu klienta.
+        </p>
+        <div class="mt-4">
+            <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Wróć na stronę główną</a>
+            <a asp-controller="Account" asp-action="Orders" class="btn btn-outline-secondary">Zobacz moje zamówienia</a>
+        </div>
+    </div>
+</div>

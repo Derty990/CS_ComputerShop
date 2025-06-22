@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Firma.PortalWWW.Interfaces;
 using Firma.PortalWWW.Services;
+using Firma.PortalWWW.Documents;
+using QuestPDF.Fluent;
 // Do hashowania haseł użyć biblioteki takiej jak BCrypt.Net-Next
 // instalacja przez NuGet: Install-Package BCrypt.Net-Next
 // Lub można użyć wbudowanych mechanizmów ASP.NET Core Identity
@@ -28,6 +30,13 @@ namespace Firma.PortalWWW.Controllers
             _context = context;
             _cartService = cartService;
             _logger = logger;
+        }
+
+        [Authorize] // Tylko zalogowani użytkownicy mogą wejść do swojego panelu
+        public IActionResult Index()
+        {
+            ViewData["Title"] = "Panel Klienta";
+            return View();
         }
 
         // GET: /Account/Register
@@ -172,6 +181,83 @@ namespace Firma.PortalWWW.Controllers
         public IActionResult AccessDenied()
         {
             return View();
+        }
+
+        [Authorize] // Upewniam się, że tylko zalogowani użytkownicy mogą zobaczyć swoje zamówienia
+        public async Task<IActionResult> Orders()
+        {
+            // Pobieram ID zalogowanego użytkownika z jego "dowodu tożsamości" (ciasteczka)
+            var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!int.TryParse(userIdString, out var userId))
+            {
+                return Unauthorized();
+            }
+
+            // Pobieram z bazy wszystkie zamówienia dla tego użytkownika,
+            // sortując je od najnowszego do najstarszego.
+            var orders = await _context.Order
+                                       .Where(o => o.IdUser == userId)
+                                       .OrderByDescending(o => o.OrderDate)
+                                       .ToListAsync();
+
+            ViewData["Title"] = "Moje zamówienia";
+            return View(orders);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> OrderDetails(int id)
+        {
+            var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!int.TryParse(userIdString, out var userId))
+            {
+                return Unauthorized();
+            }
+
+            // Pobieram z bazy jedno konkretne zamówienie.
+            // Używam Include(), aby od razu dociągnąć powiązane z nim pozycje zamówienia (OrderItems),
+            // a dla każdej pozycji także dane produktu (Product).
+            // BARDZO WAŻNE: Dodatkowo sprawdzam, czy zamówienie należy do zalogowanego użytkownika!
+            var order = await _context.Order
+                                      .Include(o => o.OrderItems)
+                                      .ThenInclude(oi => oi.Product)
+                                      .FirstOrDefaultAsync(o => o.IdOrder == id && o.IdUser == userId);
+
+            if (order == null)
+            {
+                // Jeśli zamówienie nie istnieje lub nie należy do tego użytkownika, zwracam błąd 404.
+                return NotFound();
+            }
+
+            ViewData["Title"] = $"Szczegóły zamówienia #{order.IdOrder}";
+            return View(order);
+        }
+
+        [Authorize]
+        public async Task<IActionResult> GenerateInvoice(int id)
+        {
+            var userIdString = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (!int.TryParse(userIdString, out var userId))
+            {
+                return Unauthorized();
+            }
+
+            var order = await _context.Order
+                                      .Include(o => o.OrderItems)
+                                      .ThenInclude(oi => oi.Product)
+                                      .FirstOrDefaultAsync(o => o.IdOrder == id && o.IdUser == userId);
+
+            if (order == null)
+            {
+                return NotFound();
+            }
+
+            // Tworzę dokument na podstawie mojego szablonu i danych zamówienia
+            var document = new InvoiceDocument(order);
+            // Generuję plik PDF do pamięci
+            byte[] pdfBytes = document.GeneratePdf();
+
+            // Zwracam plik do przeglądarki
+            return File(pdfBytes, "application/pdf", $"faktura-nr-{order.IdOrder}.pdf");
         }
     }
 }

@@ -50,7 +50,7 @@ namespace Firma.PortalWWW.Services
 
             var userId = GetCurrentUserId();
 
-            if (userId.HasValue) // Logged-in user - save to database
+            if (userId.HasValue) // zalogowany użytkownik - zapisz do bazy
             {
                 var cartItem = await _context.Cart
                     .FirstOrDefaultAsync(ci => ci.IdUser == userId.Value && ci.IdProduct == productId);
@@ -70,7 +70,7 @@ namespace Firma.PortalWWW.Services
                 }
                 await _context.SaveChangesAsync();
             }
-            else // Anonymous user - save to session
+            else // niezalogowany użytkownik - zapisz w sesji
             {
                 var cart = GetSessionCart();
                 var cartItem = cart.FirstOrDefault(item => item.ProductId == productId);
