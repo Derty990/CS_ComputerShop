@@ -11,7 +11,7 @@ using MailKit.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+// Dodanie serwisów do kontenera 
 builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<FirmaContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("FirmaContext") ?? throw new InvalidOperationException("Connection string 'FirmaContext' not found.")));
@@ -34,18 +34,16 @@ var mailtrapPass = "7dfec8eb7be953";
 builder.Services
        .AddFluentEmail("potwierdzenie@vivitech.pl", "Vivitech Sklep")
        .AddRazorRenderer()
-       // U¿ywam POPRAWNEJ nazwy klasy: SmtpClientOptions
        .AddMailKitSender(new SmtpClientOptions
        {
            Server = "sandbox.smtp.mailtrap.io",
            Port = 587,
            User = mailtrapUser,
            Password = mailtrapPass,
-           SocketOptions = MailKit.Security.SecureSocketOptions.StartTls,
+           SocketOptions = SecureSocketOptions.StartTls,
 
            RequiresAuthentication = true
        });
-
 
 // Konfiguracja autoryzacji 
 builder.Services.AddAuthorization(options =>

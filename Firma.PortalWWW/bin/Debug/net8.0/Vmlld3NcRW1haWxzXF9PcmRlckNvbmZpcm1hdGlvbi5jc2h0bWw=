@@ -1,0 +1,29 @@
+﻿@model Firma.Data.Data.Customers.Order
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Potwierdzenie zamówienia</title>
+</head>
+<body>
+    <h2>Cześć @Model.FirstName!</h2>
+    <p>
+        Dziękujemy za złożenie zamówienia w sklepie Vivitech.
+    </p>
+    <p>
+        Szczegóły Twojego zamówienia:
+    </p>
+    <ul>
+        <li><strong>Numer zamówienia:</strong> #@Model.IdOrder</li>
+        <li><strong>Data złożenia:</strong> @Model.OrderDate.ToString("f")</li>
+        <li><strong>Wartość całkowita:</strong> @Model.TotalAmount.ToString("C")</li>
+    </ul>
+    <p>
+        Gdy tylko wyślemy Twoją paczkę, otrzymasz od nas kolejną wiadomość.
+    </p>
+    <p>
+        Pozdrawiamy,<br>
+        Zespół Vivitech
+    </p>
+</body>
+</html> 
